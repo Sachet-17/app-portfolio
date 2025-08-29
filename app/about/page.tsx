@@ -23,7 +23,7 @@ export default function AboutPage() {
       <Navigation />
 
       {/* Big ABOUT heading (matches Projects style) */}
-      <header className="mb-12 text-center">
+      <header className="mb-12 text-right">
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
           ABOUT
         </h1>
@@ -109,7 +109,7 @@ export default function AboutPage() {
       </div>
 
       {/* Interests & Focus with looping typing */}
-      <section className="mt-20 text-center">
+      <section className="mt-20 text-right">
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">
           <Typing
             words={[
