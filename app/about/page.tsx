@@ -1,28 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Navigation } from "../components/nav";
-import { Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, FileText } from "lucide-react";
+import { Navigation } from "../components/nav"; // ✅ import your nav
 
 export const metadata = {
-  title: "About — Sachet Bisi",
+  title: "About",
   description: "About Sachet Ranjan Bisi",
 };
 
 export default function AboutPage() {
   return (
     <main className="mx-auto max-w-5xl px-6 py-16">
-      <h1 className="text-3xl font-semibold mb-8">About</h1>
+      {/* Navigation at the top */}
+      <Navigation />
+
+      <h1 className="text-3xl font-semibold mb-8 mt-16">About</h1>
 
       {/* Photo + Bio */}
       <div className="grid gap-10 md:grid-cols-[224px,1fr] items-start">
         {/* Photo */}
-        <div className="relative w-56 h-56 overflow-hidden rounded-2xl border border-zinc-800">
+        <div className="w-56 h-56 overflow-hidden rounded-2xl border border-zinc-800">
           <Image
-            src="/images/photo.jpg" // <-- change if you used a different filename
+            src="/photo.jpg" // file is in /public/photo.jpg
             alt="Sachet Ranjan Bisi"
-            fill
-            sizes="224px"
-            className="object-cover"
+            width={224}
+            height={224}
+            className="object-cover w-56 h-56"
             priority
           />
         </div>
@@ -40,6 +43,19 @@ export default function AboutPage() {
             observability and latency.
           </p>
 
+          {/* Actions */}
+          <div className="pt-2 flex flex-wrap gap-3">
+            <a
+              href="/Sachet Ranjan Bisi Resume.pdf" // ✅ exact filename in /public
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 px-3 py-2 text-sm text-zinc-200 hover:bg-zinc-900"
+            >
+              <FileText className="w-4 h-4" />
+              Download Résumé
+            </a>
+          </div>
+
           {/* Quick facts */}
           <ul className="mt-6 grid sm:grid-cols-2 gap-3 text-sm">
             <li className="flex items-center gap-2 text-zinc-400">
@@ -48,7 +64,12 @@ export default function AboutPage() {
             </li>
             <li className="flex items-center gap-2">
               <Github className="w-4 h-4" />
-              <Link href="https://github.com/Sachet-17" target="_blank" className="underline">
+              <Link
+                href="https://github.com/Sachet-17"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
                 Sachet-17
               </Link>
             </li>
@@ -57,6 +78,7 @@ export default function AboutPage() {
               <Link
                 href="https://www.linkedin.com/in/sachetbisi/"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="underline"
               >
                 sachetbisi
