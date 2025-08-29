@@ -18,9 +18,9 @@ export default function AboutPage() {
       <Navigation />
 
       {/* Big ABOUT heading */}
-      <header className="mb-10 text-center">
+      <header className="mb-10 text-right">
         <h1 className="text-zinc-100 text-5xl md:text-6xl font-bold tracking-tight">
-          ABOUT
+          About
         </h1>
       </header>
 
@@ -104,11 +104,11 @@ export default function AboutPage() {
       </div>
 
       {/* Interests & Focus with looping typing */}
-      <section className="mt-20 text-center">
+      <section className="mt-20 text-right">
         <h2 className="text-zinc-100 text-2xl font-semibold mb-6">
           <Typing
             words={[
-              "INTERESTS & FOCUS",
+              "Interests & Focus",
               "AI/ML",
               "NBA",
               "Anime & TV",
