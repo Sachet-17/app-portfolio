@@ -98,13 +98,12 @@ export default function AboutPage() {
         <h2 className="text-xl font-medium mb-4">Interests</h2>
         <div className="flex flex-wrap gap-2 text-xs">
           {[
-            "Tech Enthusiast",
-            "AI/ML",
-            "Cloud Systems",
-            "NBA",
-            "Anime/TV",
-            "Podcast",
-            "Night outs",
+            "LLMs",
+            "Gen AI",
+            "MLOps",
+            "FastAPI / Django",
+            "React / Next.js",
+            "Distributed Systems",
           ].map((tag) => (
             <span
               key={tag}
