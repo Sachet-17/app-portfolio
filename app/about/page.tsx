@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { Github, Linkedin, Mail, MapPin, FileText } from "lucide-react";
 import { Navigation } from "../components/nav";
-import Typing from "../components/typing";
+
+// 👇 load the client-only typing component safely
+const Typing = dynamic(() => import("../components/typing"), { ssr: false });
 
 export const metadata = {
   title: "About",
@@ -11,12 +14,14 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="mx-auto max-w-5xl px-6 pt-28 pb-16"> {/* <-- push below fixed nav */}
+    <main className="mx-auto max-w-5xl px-6 pt-32 pb-16"> {/* clear fixed nav */}
       <Navigation />
 
       {/* Big ABOUT heading */}
-      <header className="mb-12 text-center">
-        <h1 className="text-5xl md:text-6xl font-bold tracking-tight">ABOUT</h1>
+      <header className="mb-10 text-center">
+        <h1 className="text-zinc-100 text-5xl md:text-6xl font-bold tracking-tight">
+          ABOUT
+        </h1>
       </header>
 
       {/* Photo + Bio */}
@@ -24,7 +29,7 @@ export default function AboutPage() {
         {/* Photo */}
         <div className="w-80 h-80 overflow-hidden rounded-2xl border border-zinc-800">
           <Image
-            src="/headshots.jpg"  // make sure file exists at /public/headshots.jpg (case-sensitive)
+            src="/headshots.jpg" // make sure /public/headshots.jpg exists (case-sensitive)
             alt="Sachet Ranjan Bisi"
             width={320}
             height={320}
@@ -68,13 +73,23 @@ export default function AboutPage() {
             </li>
             <li className="flex items-center gap-2">
               <Github className="w-4 h-4" />
-              <Link href="https://github.com/Sachet-17" target="_blank" rel="noopener noreferrer" className="underline">
+              <Link
+                href="https://github.com/Sachet-17"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
                 Sachet-17
               </Link>
             </li>
             <li className="flex items-center gap-2">
               <Linkedin className="w-4 h-4" />
-              <Link href="https://www.linkedin.com/in/sachetbisi/" target="_blank" rel="noopener noreferrer" className="underline">
+              <Link
+                href="https://www.linkedin.com/in/sachetbisi/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
                 sachetbisi
               </Link>
             </li>
@@ -88,9 +103,9 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Interests & Focus with typing animation */}
+      {/* Interests & Focus with looping typing */}
       <section className="mt-20 text-center">
-        <h2 className="text-2xl font-semibold mb-6">
+        <h2 className="text-zinc-100 text-2xl font-semibold mb-6">
           <Typing
             words={[
               "INTERESTS & FOCUS",

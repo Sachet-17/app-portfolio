@@ -1,21 +1,16 @@
 "use client";
 import { useEffect, useState } from "react";
 
-type Props = {
-  words: string[];
-  speed?: number;   // ms per char
-  pause?: number;   // ms pause at word end
-};
+type Props = { words: string[]; speed?: number; pause?: number };
 
 export default function Typing({ words, speed = 80, pause = 1100 }: Props) {
-  const [w, setW] = useState(0);        // which word
-  const [i, setI] = useState(0);        // char index
-  const [dir, setDir] = useState<1 | -1>(1); // typing or deleting
+  const [w, setW] = useState(0);
+  const [i, setI] = useState(0);
+  const [dir, setDir] = useState<1 | -1>(1);
 
   useEffect(() => {
     const current = words[w];
     let t: number;
-
     if (dir === 1 && i === current.length) {
       t = window.setTimeout(() => setDir(-1), pause);
     } else if (dir === -1 && i === 0) {
@@ -26,7 +21,6 @@ export default function Typing({ words, speed = 80, pause = 1100 }: Props) {
     } else {
       t = window.setTimeout(() => setI(i + dir), speed);
     }
-
     return () => window.clearTimeout(t);
   }, [i, dir, w, words, speed, pause]);
 
