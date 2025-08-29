@@ -25,7 +25,7 @@ export default function AboutPage() {
             alt="Sachet Ranjan Bisi"
             width={320}
             height={320}
-            className="object-cover w-80 h-80"
+            className="object-cover object-top w-80 h-80"
             priority
           />
         </div>
