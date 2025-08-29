@@ -23,9 +23,9 @@ export default function AboutPage() {
           <Image
             src="/headshot.jpg" // file must be at /public/photo.jpg
             alt="Sachet Ranjan Bisi"
-            width={100}
-            height={100}
-            className="object-cover w-80 h-80"
+            width={320}
+            height={320}
+            className="object-cover object-top w-80 h-80"
             priority
           />
         </div>
