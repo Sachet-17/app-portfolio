@@ -15,9 +15,9 @@ export default function AboutPage() {
       {/* Top navigation */}
       <Navigation />
 
-      {/* Top page heading */}
-      <header className="mt-16 mb-10 text-center">
-        <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">About</h1>
+      {/* Big ABOUT heading */}
+      <header className="mt-16 mb-12 text-center">
+        <h1 className="text-5xl md:text-6xl font-bold tracking-tight">ABOUT</h1>
       </header>
 
       {/* Photo + Bio */}
@@ -25,7 +25,7 @@ export default function AboutPage() {
         {/* Photo */}
         <div className="w-80 h-80 overflow-hidden rounded-2xl border border-zinc-800">
           <Image
-            src="/headshots.jpg" // file must be at /public/headshots.jpg
+            src="/headshots.jpg" // must be in /public/headshots.jpg
             alt="Sachet Ranjan Bisi"
             width={320}
             height={320}
@@ -34,21 +34,21 @@ export default function AboutPage() {
           />
         </div>
 
-        {/* Bio + actions + quick facts */}
+        {/* Bio + Resume + Links */}
         <div className="space-y-4 text-zinc-300 leading-relaxed">
           <p>
             I’m Sachet Bisi, a Computer Engineering graduate from NYU with hands-on
             experience in software development, backend engineering, and AI/ML model
             deployment. I’ve built scalable APIs, optimized backend systems for high
             performance, and deployed intelligent applications across cloud platforms
-            like AWS, GCP, and Azure. Passionate about AI/ML and cloud-native systems,
+            like AWS, GCP, and Azure.
           </p>
           <p>
             I’m seeking full-time opportunities as a Software Engineer, AI/ML Engineer,
             or Backend Developer to create impactful, production-ready solutions.
           </p>
 
-          {/* Actions */}
+          {/* Resume button */}
           <div className="pt-2 flex flex-wrap gap-3">
             <a
               href="/Sachet%20Ranjan%20Bisi%20Resume.pdf"
@@ -99,16 +99,22 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Interests / Focus with typing effect */}
-      <section className="mt-16">
-        <h2 className="text-xl font-medium mb-4 flex items-center gap-2">
-          <span>Interests &amp; Focus</span>
-          <span className="text-sm text-zinc-400">
-            — <Typing words={["AI/ML", "NBA", "Anime", "TV", "Content", "Open to suggestions…"]} />
-          </span>
+      {/* Interests & Focus with typing animation */}
+      <section className="mt-20 text-center">
+        <h2 className="text-2xl font-semibold mb-6">
+          <Typing
+            words={[
+              "INTERESTS & FOCUS",
+              "AI/ML",
+              "NBA",
+              "Anime & TV",
+              "Content",
+              "Creative Problem-Solving",
+            ]}
+          />
         </h2>
 
-        <ul className="list-disc pl-5 space-y-2 text-zinc-300">
+        <ul className="list-disc pl-5 space-y-2 text-zinc-300 text-left max-w-2xl mx-auto">
           <li>
             <strong>Tech Enthusiast</strong> – Always exploring AI/ML, cloud-native systems,
             and emerging tools.
@@ -117,7 +123,7 @@ export default function AboutPage() {
             <strong>Basketball (NBA)</strong> – Love following the game and analyzing plays.
           </li>
           <li>
-            <strong>Anime &amp; TV</strong> – Big fan of immersive storytelling and creative worlds.
+            <strong>Anime & TV</strong> – Big fan of immersive storytelling and creative worlds.
           </li>
           <li>
             <strong>Content Consumer</strong> – Constantly learning through podcasts, videos,
