@@ -33,14 +33,13 @@ export default function AboutPage() {
         {/* Bio + actions + quick facts */}
         <div className="space-y-4 text-zinc-300 leading-relaxed">
           <p>
-            I’m a Computer Engineer with a love for AI/ML—always chasing ideas that can
-            become useful in the real world. I enjoy building projects that make a
-            difference, especially ML-powered apps, scalable APIs, and clean UIs.
+           I’m Sachet Ranjan Bisi, a Computer Engineering graduate from NYU with hands-on experience in  AI/ML model deployment software development, and  
+           backend engineering. I’ve built scalable APIs, optimized backend systems for high performance, and deployed intelligent applications 
+           across cloud platforms like AWS, GCP, and Azure. Passionate about AI/ML and cloud-native systems. 
           </p>
           <p>
-            Recently, I’ve been working on pipelines that combine OCR and ASR with LLMs
-            for medication verification, and deploying inference services with good
-            observability and latency.
+           I’m seeking full-time opportunities as a Software Engineer, AI/ML Engineer, or Data Scientist to create impactful, 
+           production-ready solutions.
           </p>
 
           {/* Actions */}
@@ -99,12 +98,13 @@ export default function AboutPage() {
         <h2 className="text-xl font-medium mb-4">Interests</h2>
         <div className="flex flex-wrap gap-2 text-xs">
           {[
-            "LLMs",
-            "Computer Vision",
-            "MLOps",
-            "FastAPI / Django",
-            "React / Next.js",
-            "Distributed Systems",
+            "Tech Enthusiast",
+            "AI/ML",
+            "Cloud Systems",
+            "NBA",
+            "Anime/TV",
+            "Podcast",
+            "Night outs",
           ].map((tag) => (
             <span
               key={tag}
@@ -116,16 +116,4 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What I'm doing now */}
-      <section className="mt-16">
-        <h2 className="text-xl font-medium mb-4">Currently</h2>
-        <ul className="list-disc pl-5 space-y-2 text-zinc-300">
-          <li>
-            Building an LLM-powered medication verification system (OCR + ASR + validation).
-          </li>
-          <li>Exploring deployment patterns and observability for ML APIs.</li>
-        </ul>
-      </section>
-    </main>
-  );
 }
