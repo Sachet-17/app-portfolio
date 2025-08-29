@@ -20,8 +20,8 @@ export default function AboutPage() {
       <Navigation />
 
       {/* ABOUT heading */}
-      <header className="mb-16 text-center">
-        <h1 className="text-6xl md:text-7xl font-bold tracking-tight text-white">
+      <header className="mb-16 text-left">
+        <h1 className="text-6xl md:text-3xl font-bold tracking-tight text-white">
           About
         </h1>
       </header>
@@ -94,7 +94,7 @@ export default function AboutPage() {
       </div>
 
       {/* typing header BELOW bio */}
-      <div className="mt-24 mb-10 text-center">
+      <div className="mt-24 mb-10 text-left">
         <p className="text-3xl md:text-2xl font-semibold text-zinc-200">
           <Typing
             words={[
