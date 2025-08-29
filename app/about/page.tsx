@@ -19,7 +19,9 @@ export default function AboutPage() {
 
       {/* Projects-like section header */}
       <section className="mb-10">
-        <h1 className="text-5xl md:text-6xl font-bold tracking-tight">About</h1>
+        <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white">
+          About
+        </h1>
         <p className="mt-4 max-w-3xl text-lg text-zinc-400">
           Computer Engineering grad (NYU) building scalable backends and ML-powered apps
           across AWS, GCP, and Azure.
@@ -104,7 +106,9 @@ export default function AboutPage() {
       {/* Interests & Focus (heading below bio, projects style) */}
       <section className="mt-10">
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">
+        <p className="mt-4 max-w-3xl text-lg text-zinc-400">
           Interests &amp; Focus
+        </p>
         </h2>
         <ul className="list-disc pl-5 space-y-2 text-zinc-300">
           <li>
