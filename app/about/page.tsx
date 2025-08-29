@@ -24,20 +24,6 @@ export default function AboutPage() {
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
           About
         </h1>
-        <p className="mt-4 text-lg text-zinc-400">
-          <Typing
-            words={[
-              "Interests & Focus",
-              "AI/ML",
-              "NBA",
-              "Anime & TV",
-              "Content",
-              "Creative Problem-Solving",
-            ]}
-            speed={80}
-            pause={1200}
-          />
-        </p>
       </header>
 
       {/* photo + bio */}
