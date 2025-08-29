@@ -8,3 +8,14 @@
   }
 } 
 
+@keyframes caret-blink { 50% { opacity: 0; } }
+.typing-caret {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  margin-left: 2px;
+  background: currentColor;
+  opacity: 0.8;
+  animation: caret-blink 1s steps(1, end) infinite;
+}
+

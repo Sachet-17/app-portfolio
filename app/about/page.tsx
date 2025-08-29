@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Github, Linkedin, Mail, MapPin, FileText } from "lucide-react";
 import { Navigation } from "../components/nav";
+import Typing from "../components/typing";
 
 export const metadata = {
   title: "About",
@@ -14,14 +15,17 @@ export default function AboutPage() {
       {/* Top navigation */}
       <Navigation />
 
-      <h1 className="text-3xl font-semibold mb-8 mt-16">About</h1>
+      {/* Top page heading */}
+      <header className="mt-16 mb-10 text-center">
+        <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">About</h1>
+      </header>
 
       {/* Photo + Bio */}
       <div className="grid gap-10 md:grid-cols-[auto,1fr] items-start">
         {/* Photo */}
         <div className="w-80 h-80 overflow-hidden rounded-2xl border border-zinc-800">
           <Image
-            src="/headshots.jpg" // file must be at /public/photo.jpg
+            src="/headshots.jpg" // file must be at /public/headshots.jpg
             alt="Sachet Ranjan Bisi"
             width={320}
             height={320}
@@ -47,10 +51,10 @@ export default function AboutPage() {
           {/* Actions */}
           <div className="pt-2 flex flex-wrap gap-3">
             <a
-              href="/Sachet%20Ranjan%20Bisi%20Resume.pdf" // ✅ exact file path in /public
+              href="/Sachet%20Ranjan%20Bisi%20Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 px-3 py-2 text-sm text-zinc-200 hover:bg-zinc-900"
+              className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 px-3 py-2 text-sm text-zinc-200 hover:bg-zinc-900 hover:translate-y-[-1px] transition"
             >
               <FileText className="w-4 h-4" />
               Download Résumé
@@ -95,9 +99,15 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Interests / Focus */}
+      {/* Interests / Focus with typing effect */}
       <section className="mt-16">
-        <h2 className="text-xl font-medium mb-4">Interests & Focus</h2>
+        <h2 className="text-xl font-medium mb-4 flex items-center gap-2">
+          <span>Interests &amp; Focus</span>
+          <span className="text-sm text-zinc-400">
+            — <Typing words={["AI/ML", "NBA", "Anime", "TV", "Content", "Open to suggestions…"]} />
+          </span>
+        </h2>
+
         <ul className="list-disc pl-5 space-y-2 text-zinc-300">
           <li>
             <strong>Tech Enthusiast</strong> – Always exploring AI/ML, cloud-native systems,
@@ -107,7 +117,7 @@ export default function AboutPage() {
             <strong>Basketball (NBA)</strong> – Love following the game and analyzing plays.
           </li>
           <li>
-            <strong>Anime & TV</strong> – Big fan of immersive storytelling and creative worlds.
+            <strong>Anime &amp; TV</strong> – Big fan of immersive storytelling and creative worlds.
           </li>
           <li>
             <strong>Content Consumer</strong> – Constantly learning through podcasts, videos,
