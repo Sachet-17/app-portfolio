@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Navigation } from "../components/nav";
 import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 
 export const metadata = {
