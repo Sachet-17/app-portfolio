@@ -40,7 +40,7 @@ export default function Home() {
       <div className="my-16 text-center animate-fade-in">
         <h2 className="text-sm text-zinc-500 ">
           I’m a Computer Engineer with a love for AI/ML, always chasing ideas that can turn into something useful in the real world. 
-          I enjoy building projects that make a difference—and I’m on the lookout for a full-time role where I can keep learning, creating, and solving meaningful problems.{" "}
+          I enjoy building projects that make a difference.{" "}
         </h2>
       </div>
     </div>
