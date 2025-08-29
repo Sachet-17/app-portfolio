@@ -20,7 +20,7 @@ export default function AboutPage() {
       <Navigation />
 
       {/* page heading */}
-      <header className="mb-12 text-right">
+      <header className="mb-12 text-left">
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
           About
         </h1>
@@ -106,6 +106,23 @@ export default function AboutPage() {
           </ul>
         </div>
       </div>
+
+      <header className="mb-12 text-left">
+        <p className="mt-4 text-lg text-zinc-400">
+          <Typing
+            words={[
+              "Interests & Focus",
+              "AI/ML",
+              "NBA",
+              "Anime & TV",
+              "Content",
+              "Creative Problem-Solving",
+            ]}
+            speed={80}
+            pause={1200}
+          />
+        </p>
+      </header>
 
       {/* static interests list */}
       <section className="mt-20">
