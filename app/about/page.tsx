@@ -26,7 +26,6 @@ export default function AboutPage() {
             width={320}
             height={320}
             className="object-cover object-top w-80 h-80"
-
             priority
           />
         </div>
@@ -34,20 +33,19 @@ export default function AboutPage() {
         {/* Bio + actions + quick facts */}
         <div className="space-y-4 text-zinc-300 leading-relaxed">
           <p>
-            I’m a Computer Engineer with a love for AI/ML—always chasing ideas that can
-            become useful in the real world. I enjoy building projects that make a
-            difference, especially ML-powered apps, scalable APIs, and clean UIs.
-          </p>
-          <p>
-            Recently, I’ve been working on pipelines that combine OCR and ASR with LLMs
-            for medication verification, and deploying inference services with good
-            observability and latency.
+            I’m Sachet Bisi, a Computer Engineering graduate from NYU with hands-on
+            experience in software development, backend engineering, and AI/ML model
+            deployment. I’ve built scalable APIs, optimized backend systems for high
+            performance, and deployed intelligent applications across cloud platforms
+            like AWS, GCP, and Azure. Passionate about AI/ML and cloud-native systems,
+            I’m seeking full-time opportunities as a Software Engineer, AI/ML Engineer,
+            or Backend Developer to create impactful, production-ready solutions.
           </p>
 
           {/* Actions */}
           <div className="pt-2 flex flex-wrap gap-3">
             <a
-              href="/Sachet%20Ranjan%20Bisi%20Resume.pdf" // or rename to /public/Sachet-Resume.pdf and change to "/Sachet-Resume.pdf"
+              href="/Sachet%20Ranjan%20Bisi%20Resume.pdf" // ✅ exact file path in /public
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 px-3 py-2 text-sm text-zinc-200 hover:bg-zinc-900"
@@ -97,34 +95,26 @@ export default function AboutPage() {
 
       {/* Interests / Focus */}
       <section className="mt-16">
-        <h2 className="text-xl font-medium mb-4">Interests</h2>
-        <div className="flex flex-wrap gap-2 text-xs">
-          {[
-            "LLMs",
-            "Computer Vision",
-            "MLOps",
-            "FastAPI / Django",
-            "React / Next.js",
-            "Distributed Systems",
-          ].map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full border border-zinc-800 px-3 py-1 text-zinc-300"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      {/* What I'm doing now */}
-      <section className="mt-16">
-        <h2 className="text-xl font-medium mb-4">Currently</h2>
+        <h2 className="text-xl font-medium mb-4">Interests & Focus</h2>
         <ul className="list-disc pl-5 space-y-2 text-zinc-300">
           <li>
-            Building an LLM-powered medication verification system (OCR + ASR + validation).
+            <strong>Tech Enthusiast</strong> – Always exploring AI/ML, cloud-native systems,
+            and emerging tools.
           </li>
-          <li>Exploring deployment patterns and observability for ML APIs.</li>
+          <li>
+            <strong>Basketball (NBA)</strong> – Love following the game and analyzing plays.
+          </li>
+          <li>
+            <strong>Anime & TV</strong> – Big fan of immersive storytelling and creative worlds.
+          </li>
+          <li>
+            <strong>Content Consumer</strong> – Constantly learning through podcasts, videos,
+            and online communities.
+          </li>
+          <li>
+            <strong>Creative Problem-Solving</strong> – Enjoy experimenting with new ideas
+            that blend tech and creativity.
+          </li>
         </ul>
       </section>
     </main>
