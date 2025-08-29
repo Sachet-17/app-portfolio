@@ -16,13 +16,13 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main className={`${inter.className} mx-auto max-w-5xl px-6 pt-32 pb-16`}>
+    <main className={`${inter.className} mx-auto max-w-5xl px-6 pt-40 pb-16`}>
       <Navigation />
 
-      {/* page heading */}
-      <header className="mb-16 text-left">
-        <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
-          <p>About</p>
+      {/* ABOUT heading */}
+      <header className="mb-16 text-center">
+        <h1 className="text-6xl md:text-7xl font-bold tracking-tight text-white">
+          About
         </h1>
       </header>
 
@@ -93,9 +93,9 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* typing header placed BELOW bio */}
-      <div className="mt-20 mb-10 text-left">
-        <p className="text-2xl md:text-3xl font-semibold text-zinc-200">
+      {/* typing header BELOW bio */}
+      <div className="mt-24 mb-10 text-center">
+        <p className="text-3xl md:text-2xl font-semibold text-zinc-200">
           <Typing
             words={[
               "Interests & Focus",
@@ -105,7 +105,7 @@ export default function AboutPage() {
               "Content",
               "Creative Problem-Solving",
             ]}
-            speed={50}
+            speed={80}
             pause={1200}
           />
         </p>
