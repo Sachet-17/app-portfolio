@@ -21,7 +21,7 @@ export default function AboutPage() {
         {/* Photo */}
         <div className="w-56 h-56 overflow-hidden rounded-2xl border border-zinc-800">
           <Image
-            src="/photo.jpg" // file is in /public/photo.jpg
+            src="app/public/photo.jpg" // file is in /public/photo.jpg
             alt="Sachet Ranjan Bisi"
             width={224}
             height={224}
@@ -46,7 +46,7 @@ export default function AboutPage() {
           {/* Actions */}
           <div className="pt-2 flex flex-wrap gap-3">
             <a
-              href="/Sachet Ranjan Bisi Resume.pdf" // ✅ exact filename in /public
+              href="app/public/Sachet%20Ranjan%20Bisi%20Resume.pdf" // ✅ exact filename in /public
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 px-3 py-2 text-sm text-zinc-200 hover:bg-zinc-900"
