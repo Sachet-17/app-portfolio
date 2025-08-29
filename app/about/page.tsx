@@ -20,7 +20,7 @@ export default function AboutPage() {
       <Navigation />
 
       {/* page heading */}
-      <header className="mb-12 text-left">
+      <header className="mb-16 text-center">
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
           About
         </h1>
@@ -93,8 +93,9 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <header className="mb-12 text-left">
-        <p className="mt-4 text-lg text-zinc-400">
+      {/* typing header placed BELOW bio */}
+      <div className="mt-20 mb-10 text-center">
+        <p className="text-2xl md:text-3xl font-semibold text-zinc-200">
           <Typing
             words={[
               "Interests & Focus",
@@ -108,10 +109,10 @@ export default function AboutPage() {
             pause={1200}
           />
         </p>
-      </header>
+      </div>
 
       {/* static interests list */}
-      <section className="mt-20">
+      <section className="mt-8">
         <ul className="list-disc pl-5 space-y-2 text-zinc-300 text-left max-w-2xl mx-auto">
           <li><strong>Tech Enthusiast</strong> – Always exploring AI/ML, cloud-native systems, and emerging tools.</li>
           <li><strong>Basketball (NBA)</strong> – Love following the game and analyzing plays.</li>
