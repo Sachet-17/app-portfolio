@@ -38,6 +38,8 @@ export default function AboutPage() {
             deployment. I’ve built scalable APIs, optimized backend systems for high
             performance, and deployed intelligent applications across cloud platforms
             like AWS, GCP, and Azure. Passionate about AI/ML and cloud-native systems,
+          </p>
+          <p>
             I’m seeking full-time opportunities as a Software Engineer, AI/ML Engineer,
             or Backend Developer to create impactful, production-ready solutions.
           </p>
