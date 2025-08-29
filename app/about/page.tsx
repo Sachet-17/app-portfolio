@@ -19,7 +19,7 @@ export default function AboutPage() {
       {/* Photo + Bio */}
       <div className="grid gap-10 md:grid-cols-[224px,1fr] items-start">
         {/* Photo */}
-        <div className="w-56 h-56 overflow-hidden rounded-2xl border border-zinc-800">
+        <div className="w-56 h-56 -mt-6 overflow-hidden rounded-2xl border border-zinc-800">
           <Image
             src="/photo.jpg" // file must be at /public/photo.jpg
             alt="Sachet Ranjan Bisi"
