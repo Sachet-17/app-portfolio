@@ -22,7 +22,7 @@ export default function AboutPage() {
       {/* === Section header (mirrors Projects style) === */}
       <section className="mb-12">
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight">About</h1>
-        <p className="mt-4 max-w-2xl text-zinc-400 text-lg">
+        <p className="mt-4 max-w-4xl text-zinc-400 text-lg">
           About
         </p>
       </section>
@@ -114,7 +114,9 @@ export default function AboutPage() {
       {/* Interests list (kept minimal to match the clean Projects vibe) */}
       <section className="mt-10">
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">
+          <p className="mt-4 max-w-2xl text-zinc-400 text-lg">
           Interests &amp; Focus
+        </p>
         </h2>
         <ul className="list-disc pl-5 space-y-2 text-zinc-300">
           <li>
