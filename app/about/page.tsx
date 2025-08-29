@@ -21,7 +21,7 @@ export default function AboutPage() {
         {/* Photo */}
         <div className="w-80 h-80 overflow-hidden rounded-2xl border border-zinc-800">
           <Image
-            src="/photo.jpg" // file must be at /public/photo.jpg
+            src="/headshot.jpg" // file must be at /public/photo.jpg
             alt="Sachet Ranjan Bisi"
             width={320}
             height={320}
