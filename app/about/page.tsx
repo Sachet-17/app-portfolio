@@ -17,7 +17,7 @@ export default function AboutPage() {
       <h1 className="text-3xl font-semibold mb-8 mt-16">About</h1>
 
       {/* Photo + Bio */}
-      <div className="grid gap-10 md:grid-cols-[224px,1fr] items-start">
+      <div className="grid gap-10 md:grid-cols-[auto,1fr] items-start">
         {/* Photo */}
         <div className="w-80 h-80 overflow-hidden rounded-2xl border border-zinc-800">
           <Image
