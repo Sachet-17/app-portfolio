@@ -69,7 +69,7 @@ export default function AboutPage() {
           <ul className="mt-6 grid sm:grid-cols-2 gap-3 text-sm">
             <li className="flex items-center gap-2 text-zinc-400">
               <MapPin className="w-4 h-4" />
-              New York, USA
+              Jersey city, NJ, USA
             </li>
             <li className="flex items-center gap-2">
               <Github className="w-4 h-4" />
