@@ -23,7 +23,7 @@ export default function AboutPage() {
       <section className="mb-12">
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight">About</h1>
         <p className="mt-4 max-w-2xl text-zinc-400 text-lg">
-          Computer Engineering grad (NYU) building scalable backends and ML-powered apps across AWS, GCP, and Azure.
+          About
         </p>
       </section>
 
