@@ -19,13 +19,9 @@ export default function AboutPage() {
 
       {/* Projects-like section header */}
       <section className="mb-10">
-        <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white">
+        <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
           About
         </h1>
-        <p className="mt-4 max-w-3xl text-lg text-zinc-400">
-          Computer Engineering grad (NYU) building scalable backends and ML-powered apps
-          across AWS, GCP, and Azure.
-        </p>
       </section>
 
       {/* faint angled wash, same vibe as Projects */}
