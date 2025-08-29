@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Github, Linkedin, Mail, MapPin, FileText } from "lucide-react";
-import { Navigation } from "../components/nav"; // ✅ import your nav
+import { Navigation } from "../components/nav";
 
 export const metadata = {
   title: "About",
@@ -11,7 +11,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <main className="mx-auto max-w-5xl px-6 py-16">
-      {/* Navigation at the top */}
+      {/* Top navigation */}
       <Navigation />
 
       <h1 className="text-3xl font-semibold mb-8 mt-16">About</h1>
@@ -21,7 +21,7 @@ export default function AboutPage() {
         {/* Photo */}
         <div className="w-56 h-56 overflow-hidden rounded-2xl border border-zinc-800">
           <Image
-            src="app/public/photo.jpg" // file is in /public/photo.jpg
+            src="/photo.jpg" // file must be at /public/photo.jpg
             alt="Sachet Ranjan Bisi"
             width={224}
             height={224}
@@ -30,7 +30,7 @@ export default function AboutPage() {
           />
         </div>
 
-        {/* Bio */}
+        {/* Bio + actions + quick facts */}
         <div className="space-y-4 text-zinc-300 leading-relaxed">
           <p>
             I’m a Computer Engineer with a love for AI/ML—always chasing ideas that can
@@ -46,7 +46,7 @@ export default function AboutPage() {
           {/* Actions */}
           <div className="pt-2 flex flex-wrap gap-3">
             <a
-              href="app/public/Sachet%20Ranjan%20Bisi%20Resume.pdf" // ✅ exact filename in /public
+              href="/Sachet%20Ranjan%20Bisi%20Resume.pdf" // or rename to /public/Sachet-Resume.pdf and change to "/Sachet-Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 px-3 py-2 text-sm text-zinc-200 hover:bg-zinc-900"
@@ -116,7 +116,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Optional: what I’m doing now */}
+      {/* What I'm doing now */}
       <section className="mt-16">
         <h2 className="text-xl font-medium mb-4">Currently</h2>
         <ul className="list-disc pl-5 space-y-2 text-zinc-300">
