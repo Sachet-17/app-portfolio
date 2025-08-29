@@ -1,17 +1,51 @@
-import Image from "next/image";
+import React from "react";
 import { Navigation } from "../components/nav";
 import { Inter } from "next/font/google";
 
+// Tech logos (Simple Icons via react-icons)
+import {
+  SiPython,
+  SiJava,
+  SiJavascript,
+  SiCplusplus,
+  SiHtml5,
+  SiCss3,
+  SiPostgresql,
+  SiReact,
+  SiDjango,
+  SiSpringboot,
+  SiTensorflow,
+  SiPytorch,
+  SiScikitlearn,
+  SiKeras,
+  SiPandas,
+  SiNumpy,
+  SiOpencv,
+  SiAmazonaws,
+  SiGooglecloud,
+  SiDocker,
+  SiKubernetes,
+  SiJenkins,
+  SiGit,
+  SiJupyter,
+  SiPostman,
+  SiFirebase,
+  SiVisualstudiocode,
+} from "react-icons/si";
+
 const inter = Inter({ subsets: ["latin"] });
 
-type SkillItem = { name: string; src: string };
+type Item = {
+  name: string;
+  icon?: React.ReactNode; // optional to allow text-only tiles when an icon doesn't exist
+};
 
 function Section({
   title,
   items,
 }: {
   title: string;
-  items: SkillItem[];
+  items: Item[];
 }) {
   return (
     <section className="mt-12">
@@ -19,24 +53,17 @@ function Section({
         {title}
       </h2>
 
-      {/* icon grid */}
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 place-items-center">
-        {items.map(({ name, src }) => (
-          <div
-            key={name}
-            className="flex flex-col items-center text-center"
-            title={name}
-          >
-            <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-xl border border-zinc-800/80 bg-zinc-900/40 flex items-center justify-center overflow-hidden hover:scale-105 transition">
-              {/* If the file exists it shows; if not, you still see the label below */}
-              <Image
-                src={src}
-                alt={name}
-                fill
-                className="object-contain p-2"
-                sizes="80px"
-                priority={false}
-              />
+        {items.map(({ name, icon }) => (
+          <div key={name} className="flex flex-col items-center text-center">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl border border-zinc-800/80 bg-zinc-900/40 flex items-center justify-center hover:scale-105 transition">
+              {icon ? (
+                // icon size & color handled via the icon's className
+                icon
+              ) : (
+                // graceful fallback if an icon doesn't exist
+                <span className="text-sm text-zinc-400 px-2">{name}</span>
+              )}
             </div>
             <span className="mt-2 text-sm text-zinc-300">{name}</span>
           </div>
@@ -53,78 +80,76 @@ export const metadata = {
 };
 
 export default function SkillsPage() {
-  // --- Edit names only; file names are under /public/skills (see list below) ---
-  const languages: SkillItem[] = [
-    { name: "Python", src: "/skills/python.svg" },
-    { name: "Java", src: "/skills/java.svg" },
-    { name: "JavaScript", src: "/skills/javascript.svg" },
-    { name: "C++", src: "/skills/cpp.svg" },
-    { name: "HTML", src: "/skills/html5.svg" },
-    { name: "CSS", src: "/skills/css3.svg" },
-    { name: "SQL", src: "/skills/sql.svg" },
+  // ---- Your skills (icons colored tastefully; tweak sizes with w-12 h-12) ----
+  const languages: Item[] = [
+    { name: "Python", icon: <SiPython className="w-12 h-12 text-yellow-300" /> },
+    { name: "Java", icon: <SiJava className="w-12 h-12 text-red-500" /> },
+    { name: "JavaScript", icon: <SiJavascript className="w-12 h-12 text-yellow-400" /> },
+    { name: "C++", icon: <SiCplusplus className="w-12 h-12 text-blue-500" /> },
+    { name: "HTML", icon: <SiHtml5 className="w-12 h-12 text-orange-500" /> },
+    { name: "CSS", icon: <SiCss3 className="w-12 h-12 text-blue-400" /> },
+    { name: "SQL", icon: <SiPostgresql className="w-12 h-12 text-sky-400" /> },
   ];
 
-  const devTools: SkillItem[] = [
-    { name: "VS Code", src: "/skills/vscode.svg" },
-    { name: "Git", src: "/skills/git.svg" },
-    { name: "JUnit", src: "/skills/junit.svg" },
-    { name: "PyTest", src: "/skills/pytest.svg" },
-    { name: "Jupyter", src: "/skills/jupyter.svg" },
-    { name: "Postman", src: "/skills/postman.svg" },
-    { name: "JAX", src: "/skills/jax.svg" },
+  const devTools: Item[] = [
+    { name: "VS Code", icon: <SiVisualstudiocode className="w-12 h-12 text-blue-500" /> },
+    { name: "Git", icon: <SiGit className="w-12 h-12 text-orange-600" /> },
+    { name: "JUnit" },                 // (no reliable simple-icon; keep text tile)
+    { name: "PyTest", icon: <SiPytorch className="w-12 h-12 text-red-500 opacity-70" /> }, // close-enough visual; or leave text-only
+    { name: "Jupyter", icon: <SiJupyter className="w-12 h-12 text-orange-300" /> },
+    { name: "Postman", icon: <SiPostman className="w-12 h-12 text-orange-400" /> },
+    { name: "JAX" },                  // text-only fallback (no official simple-icon)
   ];
 
-  const frameworks: SkillItem[] = [
-    { name: "TensorFlow", src: "/skills/tensorflow.svg" },
-    { name: "PyTorch", src: "/skills/pytorch.svg" },
-    { name: "scikit-learn", src: "/skills/scikitlearn.svg" },
-    { name: "Keras", src: "/skills/keras.svg" },
-    { name: "Pandas", src: "/skills/pandas.svg" },
-    { name: "NumPy", src: "/skills/numpy.svg" },
-    { name: "OpenCV", src: "/skills/opencv.svg" },
-    { name: "NLP", src: "/skills/nlp.svg" },                 // generic NLP icon
-    { name: "Transfer Learning", src: "/skills/transfer.svg" }, // generic
-    { name: "LLM Integration", src: "/skills/llm.svg" },        // generic
-    { name: "Spring Boot", src: "/skills/springboot.svg" },
-    { name: "React", src: "/skills/react.svg" },
-    { name: "Django", src: "/skills/django.svg" },
-    { name: "REST / RESTful APIs", src: "/skills/rest.svg" },   // generic REST
-    { name: "Firebase", src: "/skills/firebase.svg" },
+  const frameworksAndTech: Item[] = [
+    { name: "TensorFlow", icon: <SiTensorflow className="w-12 h-12 text-orange-400" /> },
+    { name: "PyTorch", icon: <SiPytorch className="w-12 h-12 text-red-500" /> },
+    { name: "Scikit-learn", icon: <SiScikitlearn className="w-12 h-12 text-orange-300" /> },
+    { name: "Keras", icon: <SiKeras className="w-12 h-12 text-red-500" /> },
+    { name: "Pandas", icon: <SiPandas className="w-12 h-12 text-zinc-200" /> },
+    { name: "NumPy", icon: <SiNumpy className="w-12 h-12 text-sky-400" /> },
+    { name: "OpenCV", icon: <SiOpencv className="w-12 h-12 text-cyan-300" /> },
+    { name: "NLP" },                  // text-only
+    { name: "Transfer Learning" },    // text-only
+    { name: "LLM Integration" },      // text-only
+    { name: "Spring Boot", icon: <SiSpringboot className="w-12 h-12 text-green-600" /> },
+    { name: "React", icon: <SiReact className="w-12 h-12 text-cyan-400" /> },
+    { name: "Django", icon: <SiDjango className="w-12 h-12 text-green-500" /> },
+    { name: "REST / RESTful APIs" },  // text-only
+    { name: "Firebase", icon: <SiFirebase className="w-12 h-12 text-yellow-400" /> },
   ];
 
-  const cloud: SkillItem[] = [
-    { name: "AWS (S3, EC2, Transcribe)", src: "/skills/aws.svg" },
-    { name: "GCP", src: "/skills/gcp.svg" },
-    { name: "Docker", src: "/skills/docker.svg" },
-    { name: "Kubernetes", src: "/skills/kubernetes.svg" },
-    { name: "Jenkins", src: "/skills/jenkins.svg" },
+  const cloudDevOps: Item[] = [
+    { name: "AWS (S3, EC2, Transcribe)", icon: <SiAmazonaws className="w-12 h-12 text-yellow-500" /> },
+    { name: "GCP", icon: <SiGooglecloud className="w-12 h-12 text-blue-500" /> },
+    { name: "Docker", icon: <SiDocker className="w-12 h-12 text-sky-400" /> },
+    { name: "Kubernetes", icon: <SiKubernetes className="w-12 h-12 text-blue-500" /> },
+    { name: "Jenkins", icon: <SiJenkins className="w-12 h-12 text-red-600" /> },
   ];
 
   return (
     <main className={`${inter.className} mx-auto max-w-6xl px-6 pt-48 pb-16`}>
       <Navigation />
 
-      {/* Header (matches About/Projects vibe) */}
+      {/* header (same rhythm as About/Projects) */}
       <section className="mb-8 text-center">
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight">Skills</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-zinc-400">
-          I love learning and shipping—here are the languages, frameworks, ML tools,
-          cloud services, and developer tooling I’m most comfortable with.
+          Languages, frameworks, ML/AI tools, cloud platforms, and developer tooling I use
+          to build production-ready software.
         </p>
       </section>
 
       <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-zinc-900/0 via-zinc-900/20 to-zinc-900/0" />
-
       <div className="mb-10 h-px w-full bg-gradient-to-r from-transparent via-zinc-700/40 to-transparent" />
 
-      {/* Groups */}
       <Section title="Languages" items={languages} />
-      <Section title="Frameworks & Technologies" items={frameworks} />
-      <Section title="Cloud & DevOps" items={cloud} />
+      <Section title="Frameworks & Technologies" items={frameworksAndTech} />
+      <Section title="Cloud & DevOps" items={cloudDevOps} />
       <Section title="Developer Tools" items={devTools} />
 
       <p className="mt-14 text-center text-sm text-zinc-500">
-        *Recently exploring LLM evals, vector DBs, and low-latency inference patterns.
+        *Actively exploring LLM evals, vector DB trade-offs, and low-latency inference patterns.
       </p>
     </main>
   );
