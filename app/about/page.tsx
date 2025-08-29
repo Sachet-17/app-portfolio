@@ -11,12 +11,11 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="mx-auto max-w-5xl px-6 py-16">
-      {/* Top navigation */}
+    <main className="mx-auto max-w-5xl px-6 pt-28 pb-16"> {/* <-- push below fixed nav */}
       <Navigation />
 
       {/* Big ABOUT heading */}
-      <header className="mt-16 mb-12 text-center">
+      <header className="mb-12 text-center">
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight">ABOUT</h1>
       </header>
 
@@ -25,7 +24,7 @@ export default function AboutPage() {
         {/* Photo */}
         <div className="w-80 h-80 overflow-hidden rounded-2xl border border-zinc-800">
           <Image
-            src="/headshots.jpg" // must be in /public/headshots.jpg
+            src="/headshots.jpg"  // make sure file exists at /public/headshots.jpg (case-sensitive)
             alt="Sachet Ranjan Bisi"
             width={320}
             height={320}
@@ -69,23 +68,13 @@ export default function AboutPage() {
             </li>
             <li className="flex items-center gap-2">
               <Github className="w-4 h-4" />
-              <Link
-                href="https://github.com/Sachet-17"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
+              <Link href="https://github.com/Sachet-17" target="_blank" rel="noopener noreferrer" className="underline">
                 Sachet-17
               </Link>
             </li>
             <li className="flex items-center gap-2">
               <Linkedin className="w-4 h-4" />
-              <Link
-                href="https://www.linkedin.com/in/sachetbisi/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
+              <Link href="https://www.linkedin.com/in/sachetbisi/" target="_blank" rel="noopener noreferrer" className="underline">
                 sachetbisi
               </Link>
             </li>
@@ -115,24 +104,11 @@ export default function AboutPage() {
         </h2>
 
         <ul className="list-disc pl-5 space-y-2 text-zinc-300 text-left max-w-2xl mx-auto">
-          <li>
-            <strong>Tech Enthusiast</strong> – Always exploring AI/ML, cloud-native systems,
-            and emerging tools.
-          </li>
-          <li>
-            <strong>Basketball (NBA)</strong> – Love following the game and analyzing plays.
-          </li>
-          <li>
-            <strong>Anime & TV</strong> – Big fan of immersive storytelling and creative worlds.
-          </li>
-          <li>
-            <strong>Content Consumer</strong> – Constantly learning through podcasts, videos,
-            and online communities.
-          </li>
-          <li>
-            <strong>Creative Problem-Solving</strong> – Enjoy experimenting with new ideas
-            that blend tech and creativity.
-          </li>
+          <li><strong>Tech Enthusiast</strong> – Always exploring AI/ML, cloud-native systems, and emerging tools.</li>
+          <li><strong>Basketball (NBA)</strong> – Love following the game and analyzing plays.</li>
+          <li><strong>Anime & TV</strong> – Big fan of immersive storytelling and creative worlds.</li>
+          <li><strong>Content Consumer</strong> – Constantly learning through podcasts, videos, and online communities.</li>
+          <li><strong>Creative Problem-Solving</strong> – Enjoy experimenting with new ideas that blend tech and creativity.</li>
         </ul>
       </section>
     </main>
