@@ -21,11 +21,11 @@ export default function AboutPage() {
         {/* Photo */}
         <div className="w-80 h-80 overflow-hidden rounded-2xl border border-zinc-800">
           <Image
-            src="/headshot.jpg" // file must be at /public/photo.jpg
+            src="/headshots.jpg" // file must be at /public/photo.jpg
             alt="Sachet Ranjan Bisi"
             width={320}
             height={320}
-            className="object-cover object-top w-80 h-80"
+            className="object-cover w-80 h-80"
             priority
           />
         </div>
