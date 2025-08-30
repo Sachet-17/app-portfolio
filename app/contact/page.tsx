@@ -24,9 +24,6 @@ export default function ContactPage() {
       <h1 className="text-white text-5xl md:text-6xl font-bold mb-6">Contact</h1>
       <p className="text-zinc-400 max-w-3xl">
         Prefer a quick form? Fill it out below — I’ll get an email when you submit.
-        <a href="mailto:sb9229@nyu.edu" className="underline hover:text-zinc-200">
-          sb9229@nyu.edu
-        </a>.
       </p>
 
       {/* Divider */}
