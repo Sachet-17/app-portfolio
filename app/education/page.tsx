@@ -18,8 +18,8 @@ type School = {
   location: string;
   dates: string;
   coursework: string[];
-  logo: string;
-  logoSize?: number; // ✅ new optional field
+  logo: string;        // path under /public, e.g. "edu/nyu.png"
+  logoSize?: number;   // OPTIONAL per-card override in px
 };
 
 const schools: School[] = [
@@ -34,8 +34,8 @@ const schools: School[] = [
       "Internet Protocols",
       "Network Security",
     ],
-    logo: "edu/nyu.png", // ✅ put file in /public/edu/nyu.png
-    logoSize: 200, // 🔥 adjust here instead of editing code
+    logo: "edu/nyu.png",
+    logoSize: 200, // uncomment to force a per-card size
   },
   {
     degree: "Bachelor of Science in Computer Engineering",
@@ -48,12 +48,46 @@ const schools: School[] = [
       "Systems Programming",
       "Computer Architecture",
     ],
-    logo: "edu/uic.png", // ✅ put file in /public/edu/uic.png
+    logo: "edu/uic.png",
+    logoSize: 200,
+  },
+  {
+    degree: "IBDP & IGCSE (Grade 9–12)",
+    university: "Indus International School",
+    location: "Hyderabad, India",
+    dates: "Aug 2015 – May 2019",
+    coursework: [
+      "Computer Science HL",
+      "Business HL",
+      "Maths HL",
+      "Physics SL",
+      "English SL",
+      "Hindi SL",
+    ],
+    logo: "edu/indus.png",
+    logoSize: 200,
+  },
+  {
+    degree: "CBSE (Grade 1–8)",
+    university: "Seven Hills Residential School",
+    location: "India",
+    dates: "Until May 2015",
+    coursework: ["General Curriculum"],
+    logo: "edu/sevenhills.png",
     logoSize: 200,
   },
 ];
 
-export default function EducationPage() {
+// Allow a global logo size override via /education?logo=200
+export default function EducationPage({
+  searchParams,
+}: {
+  searchParams?: { logo?: string };
+}) {
+  const parsed = Number(searchParams?.logo);
+  const defaultLogoPx =
+    Number.isFinite(parsed) && parsed! >= 24 && parsed! <= 256 ? parsed! : 60;
+
   return (
     <main className={`${inter.className} mx-auto max-w-6xl px-6 pt-32 pb-16`}>
       <Navigation />
@@ -64,7 +98,7 @@ export default function EducationPage() {
       </h1>
       <p className="text-zinc-400 max-w-3xl">
         A blend of academic rigor and practical projects across computer
-        engineering, AI/ML, and systems design.
+        engineering, AI/ML, and earlier foundational schooling.
       </p>
 
       {/* Divider */}
@@ -72,53 +106,55 @@ export default function EducationPage() {
 
       {/* Card grid */}
       <section className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:gap-12">
-        {schools.map((s) => (
-          <Card key={s.university}>
-            <div className="p-4 relative flex flex-col gap-4 duration-700 group md:gap-6 md:py-8 md:px-8">
-              
-
-              {/* icon + logo side by side */}
-              <div className="flex items-center gap-3">
-                <span className="relative z-10 flex items-center justify-center w-14 h-14 text-sm duration-1000 border rounded-full text-zinc-200 group-hover:text-white group-hover:bg-zinc-900 border-zinc-500 bg-zinc-900 group-hover:border-zinc-200 drop-shadow-orange">
-                  <GraduationCap size={20} />
-                </span>
-                <Image
-                  src={`/${s.logo}`}
-                  alt={`${s.university} logo`}
-                  width={s.logoSize || 48} // ✅ dynamic size
-                  height={s.logoSize || 48}
-                  className="rounded-md object-contain"
-                />
-              </div>
-
-              {/* degree + uni */}
-              <div className="z-10 mt-2">
-                <h2 className="text-xl font-medium text-zinc-200 group-hover:text-white duration-150">
-                  {s.degree}
-                </h2>
-                <p className="mt-1 text-zinc-400">{s.university}</p>
-
-                <div className="mt-2 flex flex-wrap items-center gap-4 text-sm text-zinc-500">
-                  <span className="inline-flex items-center gap-1">
-                    <Calendar className="w-4 h-4" />
-                    {s.dates}
+        {schools.map((s) => {
+          const px = s.logoSize ?? defaultLogoPx;
+          return (
+            <Card key={s.university}>
+              <div className="p-4 relative flex flex-col gap-4 duration-700 group md:gap-6 md:py-8 md:px-8">
+                {/* icon + logo side by side */}
+                <div className="flex items-center gap-3">
+                  <span className="relative z-10 flex items-center justify-center w-14 h-14 text-sm duration-1000 border rounded-full text-zinc-200 group-hover:text-white group-hover:bg-zinc-900 border-zinc-500 bg-zinc-900 group-hover:border-zinc-200 drop-shadow-orange">
+                    <GraduationCap size={20} />
                   </span>
-                  <span className="inline-flex items-center gap-1">
-                    <MapPin className="w-4 h-4" />
-                    {s.location}
-                  </span>
+                  <Image
+                    src={s.logo}
+                    alt={`${s.university} logo`}
+                    width={px}
+                    height={px}
+                    className="rounded-md object-contain"
+                    priority
+                  />
                 </div>
-              </div>
 
-              {/* coursework */}
-              <ul className="z-10 mt-2 list-disc pl-5 space-y-1 text-zinc-300 text-sm">
-                {s.coursework.map((c, i) => (
-                  <li key={i}>{c}</li>
-                ))}
-              </ul>
-            </div>
-          </Card>
-        ))}
+                {/* degree + uni */}
+                <div className="z-10 mt-2">
+                  <h2 className="text-xl font-medium text-zinc-200 group-hover:text-white duration-150">
+                    {s.degree}
+                  </h2>
+                  <p className="mt-1 text-zinc-400">{s.university}</p>
+
+                  <div className="mt-2 flex flex-wrap items-center gap-4 text-sm text-zinc-500">
+                    <span className="inline-flex items-center gap-1">
+                      <Calendar className="w-4 h-4" />
+                      {s.dates}
+                    </span>
+                    <span className="inline-flex items-center gap-1">
+                      <MapPin className="w-4 h-4" />
+                      {s.location}
+                    </span>
+                  </div>
+                </div>
+
+                {/* coursework */}
+                <ul className="z-10 mt-2 list-disc pl-5 space-y-1 text-zinc-300 text-sm">
+                  {s.coursework.map((c, i) => (
+                    <li key={i}>{c}</li>
+                  ))}
+                </ul>
+              </div>
+            </Card>
+          );
+        })}
       </section>
     </main>
   );
