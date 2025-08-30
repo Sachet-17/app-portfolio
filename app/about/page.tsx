@@ -20,8 +20,7 @@ export default function AboutPage() {
       {/* Heading + one-liner summary */}
       <h1 className="text-white text-5xl md:text-6xl font-bold mb-6">About</h1>
       <p className="text-zinc-400 max-w-3xl">
-        Computer Engineering grad (NYU) building scalable backends and ML-powered apps across AWS, GCP, and Azure.
-        I focus on clean APIs, reliable infra, and shipping production-ready features.
+        Recent Grad | NYU | AI/ML | Backend | Cloud | Coffee | NBA | Anime | Problem Solving
       </p>
 
       {/* Divider (to mirror the Skills page) */}
@@ -46,15 +45,27 @@ export default function AboutPage() {
         <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/40 p-6 lg:col-span-2">
           <h2 className="text-xl font-semibold text-white mb-3">Who I am</h2>
           <div className="space-y-4 text-zinc-300 leading-relaxed">
-            <p>
-              I’m Sachet Bisi, a Computer Engineering graduate from NYU with hands-on experience in software
-              development, backend engineering, and AI/ML model deployment. I’ve built scalable APIs, optimized
-              backend systems for high performance, and deployed intelligent applications across cloud platforms like
-              AWS, GCP, and Azure.
+             <p>
+              I’m Sachet Ranjan Bisi, a passionate and detail-oriented Computer Engineering graduate from NYU with 
+              hands-on experience across software development, backend engineering, AI/ML model deployment, and 
+              cloud-native systems. My technical expertise spans Python, Java, Spring Boot, Django, REST APIs, and 
+              cloud platforms like AWS, Google Cloud, and Azure—backed by certifications from each.
             </p>
             <p>
-              I’m seeking full-time opportunities as a Software Engineer, AI/ML Engineer, or Backend Developer to
-              create impactful, production-ready solutions.
+              I’ve contributed to impactful projects, from optimizing backend systems at ViaBot (boosting throughput by 60% 
+              and reducing latency by 75%) to building an LLM-powered medication verification system that combined OCR, ASR, 
+              and Gemini LLM to cut reconciliation time in half. I’ve also deployed ML models like MobileNetV2 for real-time 
+              food classification, achieving 88% accuracy while scaling with Kubernetes.
+            </p>
+            <p>
+              Beyond my technical journey, I’m a curious problem-solver who finds energy in exploring AI/ML, basketball (NBA), 
+              anime, immersive TV series, and creative content. I love blending tech with creativity, whether it’s engineering 
+              robust systems or brainstorming new ideas with a coffee in hand.
+            </p>
+            <p>
+              I’m currently seeking full-time opportunities as a Software Engineer, AI/ML Engineer, or Backend Developer 
+              where I can design scalable, intelligent, and meaningful systems while collaborating with teams that value 
+              innovation and impact.
             </p>
           </div>
         </div>
