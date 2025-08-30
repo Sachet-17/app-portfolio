@@ -55,8 +55,10 @@ export default function EducationPage() {
 
       <h1 className="text-white text-5xl md:text-6xl font-bold mb-6">Education</h1>
       <p className="text-zinc-400 max-w-3xl">
-        Academic journey focused on computer engineering fundamentals, intelligent systems,
-        and building reliable software at scale.
+        My academic journey has been shaped by curiosity, resilience, and a passion for technology.  
+        At <strong>New York University</strong>, I honed my expertise in <em>Computer Engineering</em>, diving deep into <em>Machine Learning, Artificial Intelligence, Internet Protocols, and Network Security</em>.  
+        Before that, I earned my <strong>Bachelor’s degree in Computer Engineering from the University of Illinois Chicago</strong>, where I built a strong foundation in <em>Data Structures, Computer Vision, Systems Programming, and Computer Architecture</em>.  
+        Together, these experiences gave me both the technical depth and problem-solving mindset to design scalable, secure, and intelligent systems that create real-world impact.
       </p>
 
       <div className="border-t border-zinc-800 mt-8 pt-12" />
