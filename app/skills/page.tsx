@@ -94,11 +94,7 @@ export default function SkillsPage() {
 
       {/* One-line summary */}
       <p className="text-zinc-400 max-w-3xl">
-        Languages & Databases: Python, Java, JavaScript, C++, HTML, CSS, SQL, PostgreSQL.{" "}
-        Developer Tools: VS Code, Git, JUnit, PyTest, Jupyter Notebook, Postman, JAX.{" "}
-        Technologies & Frameworks: TensorFlow, PyTorch, Scikit-learn, Keras, Pandas, NumPy, OpenCV, NLP, Transfer
-        Learning, LLM Integration, AWS (S3, EC2, Transcribe), GCP, Docker, Kubernetes, Jenkins, Spring Boot, React,
-        Django, REST, Firebase, RESTful APIs.
+        Languages | Databases | Developer Tools | Technologies & Frameworks
       </p>
 
       {/* Divider */}
