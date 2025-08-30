@@ -19,3 +19,9 @@
   animation: caret-blink 1s steps(1, end) infinite;
 }
 
+/* Adjust photo size for landscape orientation on small phones */
+@media (orientation: landscape) and (max-height: 480px) {
+  .about-photo {
+    max-height: 200px !important;
+  }
+}
