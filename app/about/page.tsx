@@ -46,27 +46,19 @@ export default function AboutPage() {
           <h2 className="text-xl font-semibold text-white mb-3">Who I am</h2>
           <div className="space-y-4 text-zinc-300 leading-relaxed">
              <p>
-              I’m Sachet Ranjan Bisi, a passionate and detail-oriented Computer Engineering graduate from NYU with 
-              hands-on experience across software development, backend engineering, AI/ML model deployment, and 
-              cloud-native systems. My technical expertise spans Python, Java, Spring Boot, Django, REST APIs, and 
-              cloud platforms like AWS, Google Cloud, and Azure—backed by certifications from each.
-            </p>
-            <p>
-              I’ve contributed to impactful projects, from optimizing backend systems at ViaBot (boosting throughput by 60% 
-              and reducing latency by 75%) to building an LLM-powered medication verification system that combined OCR, ASR, 
-              and Gemini LLM to cut reconciliation time in half. I’ve also deployed ML models like MobileNetV2 for real-time 
-              food classification, achieving 88% accuracy while scaling with Kubernetes.
-            </p>
-            <p>
-              Beyond my technical journey, I’m a curious problem-solver who finds energy in exploring AI/ML, basketball (NBA), 
-              anime, immersive TV series, and creative content. I love blending tech with creativity, whether it’s engineering 
-              robust systems or brainstorming new ideas with a coffee in hand.
-            </p>
-            <p>
-              I’m currently seeking full-time opportunities as a Software Engineer, AI/ML Engineer, or Backend Developer 
-              where I can design scalable, intelligent, and meaningful systems while collaborating with teams that value 
-              innovation and impact.
-            </p>
+                I’m Sachet Bisi, a Computer Engineering graduate from NYU with hands-on experience in software 
+                development, backend engineering, and AI/ML deployment. I’ve built scalable APIs, optimized backend 
+                systems, and deployed intelligent applications across AWS, GCP, and Azure.
+              </p>
+              <p>
+                My work spans from boosting system throughput by 60% at ViaBot to building an LLM-powered medication 
+                verification system that improved accuracy and halved reconciliation time. I’m passionate about designing 
+                reliable, impactful systems that blend innovation with real-world impact.
+              </p>
+              <p>
+                Outside of work, I’m a tech enthusiast and content consumer who loves following the NBA, diving into anime 
+                and immersive TV shows, and solving problems over a good cup of coffee.
+              </p>
           </div>
         </div>
 
@@ -129,6 +121,20 @@ export default function AboutPage() {
           <Link href="mailto:sb9229@nyu.edu" className="text-zinc-300 underline inline-flex items-center gap-2">
             <Mail className="w-4 h-4 text-zinc-400" />
             sb9229@nyu.edu
+          </Link>
+        </div>
+
+        {/* Instagram tile */}
+        <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/40 p-6">
+          <h3 className="text-white font-medium mb-2">Instagram</h3>
+          <Link 
+            href="https://www.instagram.com/sachet_17/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-zinc-300 underline inline-flex items-center gap-2"
+          >
+            <Instagram className="w-4 h-4 text-zinc-400" />
+            @sachet_17
           </Link>
         </div>
 
