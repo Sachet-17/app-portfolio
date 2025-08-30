@@ -32,7 +32,7 @@ export default function EducationPage() {
           <div className="flex items-center gap-3 mb-4">
             <GraduationCap className="w-6 h-6 text-zinc-400" />
             <Image
-              src="/logos/nyu.png"
+              src="edu/nyu.png"
               alt="NYU Logo"
               width={48}
               height={48}
@@ -64,7 +64,7 @@ export default function EducationPage() {
           <div className="flex items-center gap-3 mb-4">
             <GraduationCap className="w-6 h-6 text-zinc-400" />
             <Image
-              src="/logos/uic.png"
+              src="edu/uic.png"
               alt="UIC Logo"
               width={48}
               height={48}
