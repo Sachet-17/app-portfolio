@@ -75,11 +75,7 @@ export default function EducationPage() {
         {schools.map((s) => (
           <Card key={s.university}>
             <div className="p-4 relative flex flex-col gap-4 duration-700 group md:gap-6 md:py-8 md:px-8">
-              {/* vertical glow line */}
-              <span
-                className="absolute w-px h-2/3 bg-gradient-to-b from-zinc-500 via-zinc-500/50 to-transparent"
-                aria-hidden="true"
-              />
+              
 
               {/* icon + logo side by side */}
               <div className="flex items-center gap-3">
