@@ -73,8 +73,8 @@ const schools: School[] = [
     location: "India",
     dates: "Until May 2015",
     coursework: ["General Curriculum"],
-    //logo: "edu/sevenhills.png",
-    //logoSize: 200,
+    logo: "edu/sevenhills.png",
+    logoSize: 200,
   },
 ];
 
