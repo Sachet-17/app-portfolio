@@ -35,7 +35,7 @@ const schools: School[] = [
       "Network Security",
     ],
     logo: "edu/nyu.png",
-    logoSize: 200, // uncomment to force a per-card size
+    logoSize: 250, // uncomment to force a per-card size
   },
   {
     degree: "Bachelor of Science in Computer Engineering",
@@ -49,7 +49,7 @@ const schools: School[] = [
       "Computer Architecture",
     ],
     logo: "edu/uic.png",
-    logoSize: 200,
+    logoSize: 250,
   },
   {
     degree: "IBDP & IGCSE (Grade 9–12)",

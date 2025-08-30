@@ -67,11 +67,7 @@ export default function ExperiencePage() {
         {roles.map((r) => (
           <Card key={`${r.company}-${r.title}`}>
             <div className="p-4 relative flex flex-col gap-4 duration-700 group md:gap-6 md:py-8 md:px-8">
-              {/* vertical glow line (like contacts) */}
-              <span
-                className="absolute w-px h-2/3 bg-gradient-to-b from-zinc-500 via-zinc-500/50 to-transparent"
-                aria-hidden="true"
-              />
+              
               {/* circle icon (like contacts) */}
               <span className="relative z-10 flex items-center justify-center w-12 h-12 text-sm duration-1000 border rounded-full text-zinc-200 group-hover:text-white group-hover:bg-zinc-900 border-zinc-500 bg-zinc-900 group-hover:border-zinc-200 drop-shadow-orange">
                 <Briefcase size={20} />
