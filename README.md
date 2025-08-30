@@ -1,9 +1,12 @@
 <div align="center">
-  <h1>app-portfolio</h1>
-  <p>My personal portfolio — built with Next.js (App Router), Tailwind CSS, and deployed on Vercel.</p>
+  <h1>App-portfolio</h1>
+  <p>
+    My personal portfolio — built with Next.js (App Router), Tailwind CSS, and deployed on Vercel.  
+    Check it out live at <a href="https://iamsrb.com" target="_blank"><b>iamsrb.com</b></a>.
+  </p>
 
   <p>
-    <a href="https://sachet-portfolio.vercel.app" target="_blank"><b>Live Demo</b></a> ·
+    <a href="https://iamsrb.com" target="_blank"><b>Live Website</b></a> ·
     <a href="https://github.com/Sachet-17/app-portfolio" target="_blank">GitHub Repo</a>
   </p>
 
@@ -15,7 +18,6 @@
 
   <sub>Inspired by <a href="https://chronark.com" target="_blank">chronark.com</a></sub>
 </div>
-
 ---
 
 ## 🖼 Preview
