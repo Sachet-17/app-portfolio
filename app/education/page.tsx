@@ -64,7 +64,7 @@ const schools: School[] = [
       "English SL",
       "Hindi SL",
     ],
-    logo: "edu/indus.png",
+    logo: "edu/indus2.png",
     logoSize: 200,
   },
   {
