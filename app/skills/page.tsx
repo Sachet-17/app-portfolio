@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import { Navigation } from "../components/nav";
 import {
   SiPython,
-  SiOpenjdk, // Java
+  SiOpenjdk,        // Java
   SiJavascript,
   SiCplusplus,
   SiHtml5,
@@ -20,7 +20,7 @@ import {
   SiPandas,
   SiNumpy,
   SiOpencv,
-  SiAmazon, // AWS fallback
+  SiAmazon,         // AWS (fallback icon)
   SiGooglecloud,
   SiDocker,
   SiKubernetes,
@@ -38,7 +38,11 @@ type Item = { name: string; icon?: React.ReactNode };
 function Section({ title, items }: { title: string; items: Item[] }) {
   return (
     <section className="mt-12">
-      <h2 className="text-xl font-semibold mb-6">{title}</h2>
+      {/* Sub-heading (force visible) */}
+      <h2 className="text-white text-2xl md:text-3xl font-semibold mb-6">
+        {title}
+      </h2>
+
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6">
         {items.map(({ name, icon }) => (
           <div
@@ -47,7 +51,9 @@ function Section({ title, items }: { title: string; items: Item[] }) {
             title={name}
           >
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl border border-zinc-800/80 bg-zinc-900/40 flex items-center justify-center hover:scale-105 transition">
-              {icon ?? <span className="text-xs text-zinc-400 px-2">{name}</span>}
+              {icon ?? (
+                <span className="text-xs text-zinc-300 px-2">{name}</span>
+              )}
             </div>
             <span className="mt-2 text-sm text-zinc-300">{name}</span>
           </div>
@@ -112,12 +118,16 @@ export default function SkillsPage() {
     <main className={`${inter.className} mx-auto max-w-6xl px-6 pt-32 pb-16`}>
       <Navigation />
 
-      {/* Page heading (like About) */}
-      <header className="mb-12 text-left">
-        <h1 className="text-5xl md:text-6xl font-bold tracking-tight">Skills</h1>
-      </header>
+      {/* BIG page heading like About (force visible + margin) */}
+      <h1 className="text-white text-5xl md:text-6xl font-bold mb-12">
+        Skills
+      </h1>
 
-      {/* Sections */}
+      {/* Optional subtitle line (delete if you don’t want it) */}
+      {/* <p className="text-zinc-400 mb-8">
+        A snapshot of the languages, tools, and platforms I use.
+      </p> */}
+
       <Section title="Languages & Databases" items={languagesAndDB} />
       <Section title="Developer Tools" items={developerTools} />
       <Section title="Technologies / Frameworks" items={techAndFrameworks} />
