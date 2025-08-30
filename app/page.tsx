@@ -1,6 +1,8 @@
 // app/page.tsx
 import Link from "next/link";
 import Particles from "./components/particles";
+import { Github, Linkedin, Mail, Instagram } from "lucide-react";
+
 
 const navigation = [
   { name: "About", href: "/about" },
@@ -10,6 +12,34 @@ const navigation = [
   { name: "Projects", href: "/projects" },
   { name: "Resume", href: "/Sachet%20Ranjan%20Bisi%20Resume.pdf" },
   { name: "Contact", href: "/contact" },
+];
+
+// 🔗 Edit these to your own handles
+const socials = [
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/sachetbisi/",
+    icon: Linkedin,
+    external: true,
+  },
+  {
+    name: "GitHub",
+    href: "https://github.com/Sachet-17",
+    icon: Github,
+    external: true,
+  },
+  {
+    name: "Email",
+    href: "mailto:sb9229@nyu.edu",
+    icon: Mail,
+    external: false,
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/sachet_17/", // <- update
+    icon: Instagram,
+    external: true,
+  },
 ];
 
 export default function Home() {
