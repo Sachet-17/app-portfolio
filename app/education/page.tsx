@@ -1,98 +1,119 @@
+// app/education/page.tsx
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
 import { Navigation } from "../components/nav";
 
-const Typing = dynamic(() => import("../components/typing"), { ssr: false });
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Education",
-  description: "Education background of Sachet Ranjan Bisi",
+  description: "Education — Sachet Ranjan Bisi",
 };
 
-const education = [
+type School = {
+  name: string;
+  degree: string;
+  location: string;
+  dates: string;
+  logoSrc: string; // place files in /public/edu/
+  coursework: string[];
+};
+
+const schools: School[] = [
   {
-    school: "New York University",
-    period: "September 2023 - May 2025",
-    degree: "Master of Science in Computer Engineering",
-    location: "New York City, NY",
-    logo: "/nyu.png",
-    courses: ["Machine Learning", "Artificial Intelligence", "Internet Protocols", "Network Security"],
+    name: "New York University",
+    degree: "Master of Science — Computer Engineering",
+    location: "New York, NY",
+    dates: "Sep 2023 – May 2025",
+    logoSrc: "/edu/nyu.png",
+    coursework: [
+      "Machine Learning",
+      "Artificial Intelligence",
+      "Internet Protocols",
+      "Network Security",
+    ],
   },
   {
-    school: "University of Illinois",
-    period: "August 2019 - May 2023",
-    degree: "Bachelor of Science in Computer Engineering",
+    name: "University of Illinois Chicago",
+    degree: "Bachelor of Science — Computer Engineering",
     location: "Chicago, IL",
-    logo: "/uic.png",
-    courses: ["Data Structures", "Computer Vision", "Systems Programming", "Computer Architecture"],
+    dates: "Aug 2019 – May 2023",
+    logoSrc: "/edu/uic.png",
+    coursework: [
+      "Data Structures",
+      "Computer Vision",
+      "Systems Programming",
+      "Computer Architecture",
+    ],
   },
 ];
 
 export default function EducationPage() {
   return (
-    <main className={`${inter.className} mx-auto max-w-5xl px-6 pt-32 pb-16`}>
+    <main className={`${inter.className} mx-auto max-w-6xl px-6 pt-32 pb-16`}>
       {/* Top navigation */}
       <Navigation />
 
       {/* Page heading */}
-      <header className="mb-16 text-left">
-        <h1 className="text-5xl md:text-6xl font-bold tracking-tight">Education</h1>
-        <p className="mt-3 text-lg text-zinc-400">
-          My academic journey and the courses that shaped my career in Computer Engineering.
-        </p>
-      </header>
+      <h1 className="text-white text-5xl md:text-6xl font-bold mb-6">Education</h1>
+      <p className="text-zinc-400 max-w-3xl">
+        My academic journey has been shaped by curiosity, resilience, and a passion for technology.
+        I’ve focused on Computer Engineering across ML/AI and systems, with a strong foundation in
+        networking, security, and software engineering fundamentals.
+      </p>
 
-      {/* Timeline style education section */}
-      <section className="relative mt-12">
-        {/* Vertical timeline line */}
-        <span className="hidden md:block absolute left-5 top-0 bottom-0 w-px bg-zinc-800" aria-hidden="true" />
+      {/* Divider */}
+      <div className="border-t border-zinc-800 mt-8 pt-12" />
 
-        <div className="space-y-16">
-          {education.map((edu, i) => (
-            <div key={edu.school} className="relative md:pl-12">
-              {/* Timeline dot */}
-              <span className="hidden md:block absolute left-5 top-6 w-3 h-3 rounded-full bg-zinc-500 border border-zinc-900" />
+      {/* Schools */}
+      <section className="space-y-12">
+        {schools.map((s) => (
+          <article
+            key={s.name}
+            className="grid gap-8 md:grid-cols-[220px,1fr] items-center"
+          >
+            {/* Bigger Logo */}
+            <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/40 p-6 flex items-center justify-center">
+              <div className="relative w-40 h-40 md:w-52 md:h-52">
+                <Image
+                  src={s.logoSrc}
+                  alt={`${s.name} logo`}
+                  fill
+                  className="object-contain"
+                  sizes="(min-width: 768px) 208px, 160px"
+                  priority
+                />
+              </div>
+            </div>
 
-              {/* Card */}
-              <div
-                className="rounded-xl border border-zinc-800/80 bg-zinc-900/40 p-6 
-                hover:border-zinc-700 hover:bg-zinc-900/60 hover:translate-y-0.5 
-                hover:shadow-[0_0_0_1px_rgba(255,255,255,0.06)] transition duration-300"
-              >
-                <div className="flex items-center gap-4">
-                  <Image
-                    src={edu.logo}
-                    alt={edu.school}
-                    width={64}
-                    height={64}
-                    className="w-16 h-16 object-contain rounded-lg bg-zinc-800 p-2"
-                  />
-                  <div>
-                    <h3 className="text-2xl font-semibold text-zinc-200">{edu.school}</h3>
-                    <p className="text-zinc-400">{edu.degree}</p>
-                    <p className="text-zinc-500 text-sm">
-                      {edu.period} • {edu.location}
-                    </p>
-                  </div>
-                </div>
+            {/* Details */}
+            <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/40 p-6">
+              <div className="flex flex-wrap items-baseline justify-between gap-3">
+                <h2 className="text-white text-2xl font-semibold">{s.name}</h2>
+                <span className="text-sm text-zinc-400">{s.dates}</span>
+              </div>
 
-                {/* Courses */}
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {edu.courses.map((course) => (
+              <p className="text-zinc-300 mt-2">{s.degree}</p>
+              <p className="text-zinc-400 text-sm mt-1">{s.location}</p>
+
+              <div className="mt-4">
+                <h3 className="text-zinc-200 text-sm font-medium mb-2">
+                  Relevant Coursework
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {s.coursework.map((c) => (
                     <span
-                      key={course}
-                      className="px-3 py-1 rounded-lg border border-zinc-700 text-xs text-zinc-300 bg-zinc-900/30 hover:bg-zinc-800/60 transition"
+                      key={c}
+                      className="px-3 py-1 rounded-lg border border-zinc-800 text-sm text-zinc-300 bg-zinc-900/30"
                     >
-                      {course}
+                      {c}
                     </span>
                   ))}
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          </article>
+        ))}
       </section>
     </main>
   );
