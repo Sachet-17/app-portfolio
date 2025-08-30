@@ -3,7 +3,7 @@ import React from "react";
 import { Inter } from "next/font/google";
 import { Navigation } from "../components/nav";
 
-// Only import icons that definitely exist in your react-icons version
+// Only import icons that exist reliably in your react-icons version
 import {
   SiPython,
   SiOpenjdk,         // Java
@@ -22,7 +22,7 @@ import {
   SiPandas,
   SiNumpy,
   SiOpencv,
-  SiAmazon,          // ✅ use Amazon (works), not SiAmazonaws
+  SiAmazon,          // AWS fallback icon (Amazon)
   SiGooglecloud,
   SiDocker,
   SiKubernetes,
@@ -31,7 +31,6 @@ import {
   SiJupyter,
   SiPostman,
   SiFirebase,
-  SiNodedotjs,
 } from "react-icons/si";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -41,12 +40,16 @@ type Item = { name: string; icon?: React.ReactNode };
 function Section({ title, items }: { title: string; items: Item[] }) {
   return (
     <section className="mt-12">
-      <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-center mb-6">
+      <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">
         {title}
       </h2>
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 place-items-center">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6">
         {items.map(({ name, icon }) => (
-          <div key={name} className="flex flex-col items-center text-center">
+          <div
+            key={name}
+            className="flex flex-col items-center text-center"
+            title={name}
+          >
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl border border-zinc-800/80 bg-zinc-900/40 flex items-center justify-center hover:scale-105 transition">
               {icon ?? <span className="text-xs text-zinc-400 px-2">{name}</span>}
             </div>
@@ -61,11 +64,12 @@ function Section({ title, items }: { title: string; items: Item[] }) {
 export const metadata = {
   title: "Skills",
   description:
-    "Languages, frameworks, ML/AI tools, cloud & DevOps, and developer tooling I work with.",
+    "Languages, databases, developer tools, and technologies/frameworks I use to build production software.",
 };
 
 export default function SkillsPage() {
-  const languages: Item[] = [
+  // 1) Languages & Databases
+  const languagesAndDB: Item[] = [
     { name: "Python", icon: <SiPython className="w-12 h-12 text-yellow-300" /> },
     { name: "Java", icon: <SiOpenjdk className="w-12 h-12 text-orange-500" /> },
     { name: "JavaScript", icon: <SiJavascript className="w-12 h-12 text-yellow-400" /> },
@@ -73,19 +77,22 @@ export default function SkillsPage() {
     { name: "HTML", icon: <SiHtml5 className="w-12 h-12 text-orange-500" /> },
     { name: "CSS", icon: <SiCss3 className="w-12 h-12 text-blue-400" /> },
     { name: "SQL", icon: <SiPostgresql className="w-12 h-12 text-sky-400" /> },
+    { name: "PostgreSQL", icon: <SiPostgresql className="w-12 h-12 text-sky-400" /> },
   ];
 
-  const devTools: Item[] = [
-    { name: "VS Code" }, // text tile (icon not in your set reliably)
+  // 2) Developer Tools
+  const developerTools: Item[] = [
+    { name: "VS Code" }, // text tile (icon not guaranteed across versions)
     { name: "Git", icon: <SiGit className="w-12 h-12 text-orange-600" /> },
-    { name: "JUnit" },     // text tile
-    { name: "PyTest" },    // text tile
-    { name: "Jupyter", icon: <SiJupyter className="w-12 h-12 text-orange-300" /> },
+    { name: "JUnit" },   // text tile
+    { name: "PyTest" },  // text tile
+    { name: "Jupyter Notebook", icon: <SiJupyter className="w-12 h-12 text-orange-300" /> },
     { name: "Postman", icon: <SiPostman className="w-12 h-12 text-orange-400" /> },
-    { name: "JAX" },       // text tile
+    { name: "JAX" },     // text tile
   ];
 
-  const frameworksAndTech: Item[] = [
+  // 3) Technologies / Frameworks
+  const techAndFrameworks: Item[] = [
     { name: "TensorFlow", icon: <SiTensorflow className="w-12 h-12 text-orange-400" /> },
     { name: "PyTorch", icon: <SiPytorch className="w-12 h-12 text-red-500" /> },
     { name: "Scikit-learn", icon: <SiScikitlearn className="w-12 h-12 text-orange-300" /> },
@@ -93,47 +100,48 @@ export default function SkillsPage() {
     { name: "Pandas", icon: <SiPandas className="w-12 h-12 text-zinc-200" /> },
     { name: "NumPy", icon: <SiNumpy className="w-12 h-12 text-sky-400" /> },
     { name: "OpenCV", icon: <SiOpencv className="w-12 h-12 text-cyan-300" /> },
-    { name: "NLP" },                 // text tile
-    { name: "Transfer Learning" },   // text tile
-    { name: "LLM Integration" },     // text tile
-    { name: "Node.js", icon: <SiNodedotjs className="w-12 h-12 text-green-500" /> },
-    { name: "React", icon: <SiReact className="w-12 h-12 text-cyan-400" /> },
-    { name: "Django", icon: <SiDjango className="w-12 h-12 text-green-500" /> },
-    { name: "Spring Boot", icon: <SiSpringboot className="w-12 h-12 text-green-600" /> },
-    { name: "Firebase", icon: <SiFirebase className="w-12 h-12 text-yellow-400" /> },
-    { name: "REST / RESTful APIs" }, // text tile
-  ];
-
-  const cloudDevOps: Item[] = [
-    { name: "AWS (S3, EC2, Transcribe)", icon: <SiAmazon className="w-12 h-12 text-yellow-500" /> }, // Amazon icon
+    { name: "NLP" },                       // text tile
+    { name: "Transfer Learning" },         // text tile
+    { name: "LLM Integration" },           // text tile
+    { name: "AWS (S3, EC2, Transcribe)", icon: <SiAmazon className="w-12 h-12 text-yellow-500" /> },
     { name: "GCP", icon: <SiGooglecloud className="w-12 h-12 text-blue-500" /> },
     { name: "Docker", icon: <SiDocker className="w-12 h-12 text-sky-400" /> },
     { name: "Kubernetes", icon: <SiKubernetes className="w-12 h-12 text-blue-500" /> },
     { name: "Jenkins", icon: <SiJenkins className="w-12 h-12 text-red-600" /> },
+    { name: "Spring Boot", icon: <SiSpringboot className="w-12 h-12 text-green-600" /> },
+    { name: "React", icon: <SiReact className="w-12 h-12 text-cyan-400" /> },
+    { name: "Django", icon: <SiDjango className="w-12 h-12 text-green-500" /> },
+    { name: "REST", },                     // text tile
+    { name: "Firebase", icon: <SiFirebase className="w-12 h-12 text-yellow-400" /> },
+    { name: "RESTful APIs", },             // text tile
   ];
 
   return (
-    <main className={`${inter.className} mx-auto max-w-6xl px-6 pt-48 pb-16`}>
+    <main className={`${inter.className} mx-auto max-w-6xl px-6 pt-48 pb-16 relative`}>
       <Navigation />
 
-      {/* Header (Projects/About style) */}
-      <section className="mb-8 text-center">
+      {/* Top-right tiny page label (matches your site vibe) */}
+      <div className="absolute right-6 top-24 text-sm text-zinc-500">
+        Skills
+      </div>
+
+      {/* Main page heading */}
+      <section className="mb-8">
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight">Skills</h1>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-zinc-400">
-          Languages, frameworks, ML/AI tools, cloud platforms, and developer tooling I use
-          to build production-ready software.
+        <p className="mt-4 max-w-3xl text-lg text-zinc-400">
+          Languages, databases, developer tools, and technologies/frameworks I use to build production-ready software.
         </p>
       </section>
 
       <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-zinc-900/0 via-zinc-900/20 to-zinc-900/0" />
       <div className="mb-10 h-px w-full bg-gradient-to-r from-transparent via-zinc-700/40 to-transparent" />
 
-      <Section title="Languages" items={languages} />
-      <Section title="Frameworks & Technologies" items={frameworksAndTech} />
-      <Section title="Cloud & DevOps" items={cloudDevOps} />
-      <Section title="Developer Tools" items={devTools} />
+      {/* Your three requested groups */}
+      <Section title="Languages & Databases" items={languagesAndDB} />
+      <Section title="Developer Tools" items={developerTools} />
+      <Section title="Technologies / Frameworks" items={techAndFrameworks} />
 
-      <p className="mt-14 text-center text-sm text-zinc-500">
+      <p className="mt-14 text-sm text-zinc-500">
         *Actively exploring LLM evals, vector DBs, and low-latency inference patterns.
       </p>
     </main>
