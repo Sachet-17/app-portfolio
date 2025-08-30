@@ -37,8 +37,8 @@ type Item = { name: string; icon?: React.ReactNode };
 
 function Section({ title, items }: { title: string; items: Item[] }) {
   return (
-    <section className="mt-12">
-      {/* Sub-heading (force visible) */}
+    <section className="border-t border-zinc-800 pt-12 mt-12">
+      {/* Sub-heading with divider line above */}
       <h2 className="text-white text-2xl md:text-3xl font-semibold mb-6">
         {title}
       </h2>
@@ -118,15 +118,10 @@ export default function SkillsPage() {
     <main className={`${inter.className} mx-auto max-w-6xl px-6 pt-32 pb-16`}>
       <Navigation />
 
-      {/* BIG page heading like About (force visible + margin) */}
-      <h1 className="text-white text-5xl md:text-6xl font-bold mb-12">
+      {/* BIG heading at top */}
+      <h1 className="text-white text-2xl md:text-3xl font-bold mb-12">
         Skills
       </h1>
-
-      {/* Optional subtitle line (delete if you don’t want it) */}
-      {/* <p className="text-zinc-400 mb-8">
-        A snapshot of the languages, tools, and platforms I use.
-      </p> */}
 
       <Section title="Languages & Databases" items={languagesAndDB} />
       <Section title="Developer Tools" items={developerTools} />
