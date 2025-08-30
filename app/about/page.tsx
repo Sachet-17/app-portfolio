@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Inter } from "next/font/google";
 import { Navigation } from "../components/nav";
-import { MapPin, Github, Linkedin, Mail, FileText } from "lucide-react";
+import { MapPin, Github, Linkedin, Mail, FileText, Instagram } from "lucide-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
