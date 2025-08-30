@@ -3,7 +3,7 @@ import React from "react";
 import { Inter } from "next/font/google";
 import { Navigation } from "../components/nav";
 
-// Simple Icons via react-icons (only ones that exist are imported)
+// Only import icons that definitely exist in your react-icons version
 import {
   SiPython,
   SiOpenjdk,         // Java
@@ -22,7 +22,7 @@ import {
   SiPandas,
   SiNumpy,
   SiOpencv,
-  SiAmazonaws,
+  SiAmazon,          // ✅ use Amazon (works), not SiAmazonaws
   SiGooglecloud,
   SiDocker,
   SiKubernetes,
@@ -31,7 +31,6 @@ import {
   SiJupyter,
   SiPostman,
   SiFirebase,
-  SiVisualstudiocode,
   SiNodedotjs,
 } from "react-icons/si";
 
@@ -68,7 +67,7 @@ export const metadata = {
 export default function SkillsPage() {
   const languages: Item[] = [
     { name: "Python", icon: <SiPython className="w-12 h-12 text-yellow-300" /> },
-    { name: "Java", icon: <SiOpenjdk className="w-12 h-12 text-orange-500" /> }, // Java icon = OpenJDK
+    { name: "Java", icon: <SiOpenjdk className="w-12 h-12 text-orange-500" /> },
     { name: "JavaScript", icon: <SiJavascript className="w-12 h-12 text-yellow-400" /> },
     { name: "C++", icon: <SiCplusplus className="w-12 h-12 text-blue-500" /> },
     { name: "HTML", icon: <SiHtml5 className="w-12 h-12 text-orange-500" /> },
@@ -77,13 +76,13 @@ export default function SkillsPage() {
   ];
 
   const devTools: Item[] = [
-    { name: "VS Code", icon: <SiVisualstudiocode className="w-12 h-12 text-blue-500" /> },
+    { name: "VS Code" }, // text tile (icon not in your set reliably)
     { name: "Git", icon: <SiGit className="w-12 h-12 text-orange-600" /> },
-    { name: "JUnit" },     // no official icon in SI
-    { name: "PyTest" },    // no official icon in SI
+    { name: "JUnit" },     // text tile
+    { name: "PyTest" },    // text tile
     { name: "Jupyter", icon: <SiJupyter className="w-12 h-12 text-orange-300" /> },
     { name: "Postman", icon: <SiPostman className="w-12 h-12 text-orange-400" /> },
-    { name: "JAX" },       // no official icon in SI
+    { name: "JAX" },       // text tile
   ];
 
   const frameworksAndTech: Item[] = [
@@ -106,7 +105,7 @@ export default function SkillsPage() {
   ];
 
   const cloudDevOps: Item[] = [
-    { name: "AWS (S3, EC2, Transcribe)", icon: <SiAmazonaws className="w-12 h-12 text-yellow-500" /> },
+    { name: "AWS (S3, EC2, Transcribe)", icon: <SiAmazon className="w-12 h-12 text-yellow-500" /> }, // Amazon icon
     { name: "GCP", icon: <SiGooglecloud className="w-12 h-12 text-blue-500" /> },
     { name: "Docker", icon: <SiDocker className="w-12 h-12 text-sky-400" /> },
     { name: "Kubernetes", icon: <SiKubernetes className="w-12 h-12 text-blue-500" /> },
