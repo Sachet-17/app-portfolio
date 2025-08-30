@@ -46,7 +46,7 @@ export default function AboutPage() {
           <h2 className="text-xl font-semibold text-white mb-3">Who I am</h2>
           <div className="space-y-4 text-zinc-300 leading-relaxed">
              <p>
-                I’m Sachet Bisi, a Computer Engineering graduate from NYU with hands-on experience in software 
+                I’m Sachet Ranjan Bisi, a Computer Engineering graduate from NYU with hands-on experience in software 
                 development, backend engineering, and AI/ML deployment. I’ve built scalable APIs, optimized backend 
                 systems, and deployed intelligent applications across AWS, GCP, and Azure.
               </p>

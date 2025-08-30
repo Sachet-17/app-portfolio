@@ -7,13 +7,13 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "Sachet Bisi — Portfolio",
-    template: "%s | Sachet Bisi",
+    default: "Sachet Ranjan Bisi — Portfolio",
+    template: "%s | Sachet Ranjan Bisi",
   },
   description: "Software Developer & AI/ML Engineer",
   metadataBase: new URL("https://iamsrb.com"), // <- your live domain
   openGraph: {
-    title: "Sachet Bisi — Portfolio",
+    title: "Sachet Ranjan Bisi — Portfolio",
     description: "Software Developer & AI/ML Engineer",
     url: "/", // resolved against metadataBase
     siteName: "Sachet Bisi",
