@@ -1,117 +1,86 @@
-// app/education/page.tsx
+"use client";
+
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import { Navigation } from "../components/nav";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Education",
-  description: "Education — Sachet Ranjan Bisi",
-};
-
-type School = {
-  name: string;
-  degree: string;
-  location: string;
-  dates: string;
-  logoSrc: string; // put the logo file in /public/edu/
-  coursework: string[];
-};
-
-const schools: School[] = [
-  {
-    name: "New York University",
-    degree: "Master of Science — Computer Engineering",
-    location: "New York, NY",
-    dates: "Sep 2023 – May 2025",
-    logoSrc: "/edu/nyu.png",
-    coursework: [
-      "Machine Learning",
-      "Artificial Intelligence",
-      "Internet Protocols",
-      "Network Security",
-    ],
-  },
-  {
-    name: "University of Illinois Chicago",
-    degree: "Bachelor of Science — Computer Engineering",
-    location: "Chicago, IL",
-    dates: "Aug 2019 – May 2023",
-    logoSrc: "/edu/uic.png",
-    coursework: [
-      "Data Structures",
-      "Computer Vision",
-      "Systems Programming",
-      "Computer Architecture",
-    ],
-  },
-];
-
 export default function EducationPage() {
   return (
-    <main className={`${inter.className} mx-auto max-w-6xl px-6 pt-32 pb-16`}>
+    <main className={`${inter.className} mx-auto max-w-5xl px-6 pt-32 pb-16`}>
+      {/* Top navigation */}
       <Navigation />
 
-      {/* Heading + summary */}
-      <h1 className="text-white text-5xl md:text-6xl font-bold mb-6">Education</h1>
-      <p className="text-zinc-400 max-w-3xl">
-        Academic journey focused on computer engineering fundamentals, intelligent systems,
-        and building reliable software at scale.
+      {/* Page heading */}
+      <header className="mb-12 text-left">
+        <h1 className="text-5xl md:text-6xl font-bold tracking-tight">Education</h1>
+      </header>
+
+      {/* Summary */}
+      <p className="text-zinc-300 text-lg leading-relaxed max-w-3xl mb-12">
+        I have pursued my academic journey with a focus on <strong>Computer Engineering</strong>, 
+        gaining strong foundations in software development, machine learning, and systems programming.  
+        Here are the institutions where I studied:
       </p>
 
-      {/* Divider */}
-      <div className="border-t border-zinc-800 mt-8 pt-12" />
-
-      {/* Schools */}
-      <section className="space-y-8">
-        {schools.map((s) => (
-          <article
-            key={s.name}
-            className="grid grid-cols-1 md:grid-cols-[160px,1fr] gap-6"
-          >
-            {/* Logo tile */}
-            <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/40 p-4 flex items-center justify-center">
-              <div className="relative w-28 h-28">
-                <Image
-                  src={s.logoSrc}
-                  alt={`${s.name} logo`}
-                  fill
-                  className="object-contain"
-                  sizes="112px"
-                  priority
-                />
-              </div>
+      {/* Education Cards (similar to Projects UI) */}
+      <section className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        {/* NYU */}
+        <div className="border border-zinc-800 rounded-lg p-6 hover:bg-zinc-900 transition">
+          <div className="flex items-center gap-4 mb-4">
+            <Image
+              src="/skills/nyu.png" // place your NYU logo in public/skills/nyu.png
+              alt="New York University Logo"
+              width={40}
+              height={40}
+              className="rounded"
+            />
+            <div>
+              <h3 className="text-lg font-semibold text-zinc-100">
+                New York University
+              </h3>
+              <p className="text-sm text-zinc-400">
+                September 2023 – May 2025 · New York, NY
+              </p>
             </div>
+          </div>
+          <p className="text-zinc-300">
+            Master of Science in <strong>Computer Engineering</strong>
+          </p>
+          <p className="text-sm text-zinc-400 mt-2">
+            Relevant Coursework: Machine Learning, Artificial Intelligence, 
+            Internet Protocols, Network Security
+          </p>
+        </div>
 
-            {/* Details tile */}
-            <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/40 p-6">
-              <div className="flex flex-wrap items-baseline justify-between gap-3">
-                <h2 className="text-white text-xl font-semibold">{s.name}</h2>
-                <span className="text-sm text-zinc-400">{s.dates}</span>
-              </div>
-
-              <p className="text-zinc-300 mt-1">{s.degree}</p>
-              <p className="text-zinc-400 text-sm mt-1">{s.location}</p>
-
-              <div className="mt-4">
-                <h3 className="text-zinc-200 text-sm font-medium mb-2">
-                  Relevant Coursework
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {s.coursework.map((c) => (
-                    <span
-                      key={c}
-                      className="px-3 py-1 rounded-lg border border-zinc-800 text-xs text-zinc-300 bg-zinc-900/30"
-                    >
-                      {c}
-                    </span>
-                  ))}
-                </div>
-              </div>
+        {/* University of Illinois */}
+        <div className="border border-zinc-800 rounded-lg p-6 hover:bg-zinc-900 transition">
+          <div className="flex items-center gap-4 mb-4">
+            <Image
+              src="/skills/illinois.png" // place your Illinois logo in public/skills/illinois.png
+              alt="University of Illinois Logo"
+              width={40}
+              height={40}
+              className="rounded"
+            />
+            <div>
+              <h3 className="text-lg font-semibold text-zinc-100">
+                University of Illinois
+              </h3>
+              <p className="text-sm text-zinc-400">
+                August 2019 – May 2023 · Chicago, IL
+              </p>
             </div>
-          </article>
-        ))}
+          </div>
+          <p className="text-zinc-300">
+            Bachelor of Science in <strong>Computer Engineering</strong>
+          </p>
+          <p className="text-sm text-zinc-400 mt-2">
+            Relevant Coursework: Data Structures, Computer Vision, Systems Programming, 
+            Computer Architecture
+          </p>
+        </div>
       </section>
     </main>
   );
