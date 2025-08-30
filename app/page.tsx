@@ -38,7 +38,7 @@ export default function Home() {
 
       {/* Hero title */}
       <h1 className="z-10 mt-6 sm:mt-8 px-2 text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tight text-transparent bg-clip-text bg-white/90 text-edge-outline animate-title whitespace-nowrap">
-        Sachet Bisi
+        Sachet Ranjan Bisi
       </h1>
 
       {/* Glow line */}
@@ -50,7 +50,7 @@ export default function Home() {
           Software Engineer • AI/ML • Backend — building reliable, scalable systems and clean UIs.
         </p>
 
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+        {/*<div className="mt-5 flex flex-wrap items-center justify-center gap-3">
           <Link
             href="/projects"
             className="rounded-md border border-zinc-700 px-4 py-2 text-sm text-zinc-100 hover:bg-zinc-900"
@@ -63,7 +63,7 @@ export default function Home() {
           >
             Contact
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );
