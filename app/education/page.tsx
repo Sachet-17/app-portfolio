@@ -74,7 +74,7 @@ const schools: School[] = [
     dates: "Until May 2015",
     coursework: ["General Curriculum"],
     logo: "edu/sevenhills2.png",
-    logoSize: 200,
+    logoSize: 150,
   },
 ];
 

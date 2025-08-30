@@ -23,8 +23,7 @@ export default function ContactPage() {
       {/* Heading */}
       <h1 className="text-white text-5xl md:text-6xl font-bold mb-6">Contact</h1>
       <p className="text-zinc-400 max-w-3xl">
-        Prefer a quick form? Fill it out below — I’ll get an email when you submit. You can
-        also reach me directly at{" "}
+        Prefer a quick form? Fill it out below — I’ll get an email when you submit.
         <a href="mailto:sb9229@nyu.edu" className="underline hover:text-zinc-200">
           sb9229@nyu.edu
         </a>.
@@ -114,7 +113,7 @@ export default function ContactPage() {
             <div className="border-t border-zinc-800 my-4" />
 
             <p className="text-xs text-zinc-500">
-              Note: The embedded form keeps Google’s internal styling. Use the palette icon in Google Forms to pick a darker theme for an even better match.
+              Note: The embedded form keeps Google’s internal styling.
             </p>
           </div>
         </Card>
