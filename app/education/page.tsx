@@ -18,7 +18,7 @@ type School = {
   location: string;
   dates: string;
   coursework: string[];
-  logo: string; // ✅ new
+  logo: string;
 };
 
 const schools: School[] = [
@@ -33,7 +33,7 @@ const schools: School[] = [
       "Internet Protocols",
       "Network Security",
     ],
-    logo: "/nyu.png", // ✅ place logo in /public/nyu.png
+    logo: "/nyu.png", // ✅ put file in /public/nyu.png
   },
   {
     degree: "Bachelor of Science in Computer Engineering",
@@ -46,7 +46,7 @@ const schools: School[] = [
       "Systems Programming",
       "Computer Architecture",
     ],
-    logo: "/uic.png", // ✅ place logo in /public/uic.png
+    logo: "/uic.png", // ✅ put file in /public/uic.png
   },
 ];
 
@@ -56,9 +56,12 @@ export default function EducationPage() {
       <Navigation />
 
       {/* Heading */}
-      <h1 className="text-white text-5xl md:text-6xl font-bold mb-6">Education</h1>
+      <h1 className="text-white text-5xl md:text-6xl font-bold mb-6">
+        Education
+      </h1>
       <p className="text-zinc-400 max-w-3xl">
-        A blend of academic rigor and practical projects across computer engineering, AI/ML, and systems design.
+        A blend of academic rigor and practical projects across computer
+        engineering, AI/ML, and systems design.
       </p>
 
       {/* Divider */}
@@ -75,20 +78,22 @@ export default function EducationPage() {
                 aria-hidden="true"
               />
 
-              {/* Icon + logo together */}
-              <span className="relative z-10 flex items-center justify-center w-14 h-14 text-sm duration-1000 border rounded-full text-zinc-200 group-hover:text-white group-hover:bg-zinc-900 border-zinc-500 bg-zinc-900 group-hover:border-zinc-200 drop-shadow-orange gap-2">
-                <GraduationCap size={20} />
+              {/* icon + logo side by side */}
+              <div className="flex items-center gap-3">
+                <span className="relative z-10 flex items-center justify-center w-14 h-14 text-sm duration-1000 border rounded-full text-zinc-200 group-hover:text-white group-hover:bg-zinc-900 border-zinc-500 bg-zinc-900 group-hover:border-zinc-200 drop-shadow-orange">
+                  <GraduationCap size={20} />
+                </span>
                 <Image
                   src={s.logo}
                   alt={`${s.university} logo`}
-                  width={20}
-                  height={20}
-                  className="rounded-sm"
+                  width={40}
+                  height={40}
+                  className="rounded-md"
                 />
-              </span>
+              </div>
 
               {/* degree + uni */}
-              <div className="z-10">
+              <div className="z-10 mt-2">
                 <h2 className="text-xl font-medium text-zinc-200 group-hover:text-white duration-150">
                   {s.degree}
                 </h2>
