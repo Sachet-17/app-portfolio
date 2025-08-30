@@ -2,8 +2,8 @@
 import React from "react";
 import { Inter } from "next/font/google";
 import { Navigation } from "../components/nav";
-// ✅ example icons from react-icons
-import { SiPython, SiJava, SiReact } from "react-icons/si";
+// ✅ use icons that exist in react-icons v5
+import { SiPython, SiReact, SiOpenjdk } from "react-icons/si";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +15,7 @@ export const metadata = {
 export default function SkillsPage() {
   const skills = [
     { name: "Python", icon: <SiPython className="w-12 h-12 text-yellow-400" /> },
-    { name: "Java", icon: <SiJava className="w-12 h-12 text-red-500" /> },
+    { name: "Java", icon: <SiOpenjdk className="w-12 h-12 text-orange-500" /> }, // <-- Java replacement
     { name: "React", icon: <SiReact className="w-12 h-12 text-cyan-400" /> },
   ];
 
@@ -23,7 +23,7 @@ export default function SkillsPage() {
     <main className={`${inter.className} mx-auto max-w-6xl px-6 pt-48 pb-16`}>
       <Navigation />
 
-      {/* Header like Projects/About */}
+      {/* Header like About/Projects */}
       <section className="mb-8 text-center">
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight">Skills</h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-zinc-400">
