@@ -23,7 +23,10 @@ export default function ResumePage() {
       <p className="text-zinc-400 mb-6">
         View my résumé below. You can also download it for later.
       </p>
-
+      
+      {/* Divider */}
+      <div className="border-t border-zinc-800 mb-12" />
+      
       {/* Actions */}
       <div className="mb-8 flex flex-wrap gap-3">
         <Link
