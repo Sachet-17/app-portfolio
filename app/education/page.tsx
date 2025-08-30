@@ -35,7 +35,7 @@ const schools: School[] = [
       "Network Security",
     ],
     logo: "edu/nyu.png", // ✅ put file in /public/edu/nyu.png
-    logoSize: 60, // 🔥 adjust here instead of editing code
+    logoSize: 120, // 🔥 adjust here instead of editing code
   },
   {
     degree: "Bachelor of Science in Computer Engineering",
@@ -49,7 +49,7 @@ const schools: School[] = [
       "Computer Architecture",
     ],
     logo: "edu/uic.png", // ✅ put file in /public/edu/uic.png
-    logoSize: 60,
+    logoSize: 120,
   },
 ];
 
