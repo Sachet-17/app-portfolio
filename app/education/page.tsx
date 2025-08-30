@@ -15,7 +15,7 @@ type School = {
   degree: string;
   location: string;
   dates: string;
-  logoSrc: string; // put files in /public/edu/
+  logoSrc: string; // place files in /public/edu/
   coursework: string[];
 };
 
@@ -53,42 +53,45 @@ export default function EducationPage() {
     <main className={`${inter.className} mx-auto max-w-6xl px-6 pt-32 pb-16`}>
       <Navigation />
 
+      {/* Heading + summary */}
       <h1 className="text-white text-5xl md:text-6xl font-bold mb-6">Education</h1>
       <p className="text-zinc-400 max-w-3xl">
-        My academic journey has been shaped by curiosity, resilience, and a passion for technology.  
-        At <strong>New York University</strong>, I honed my expertise in <em>Computer Engineering</em>, diving deep into <em>Machine Learning, Artificial Intelligence, Internet Protocols, and Network Security</em>.  
-        Before that, I earned my <strong>Bachelor’s degree in Computer Engineering from the University of Illinois Chicago</strong>, where I built a strong foundation in <em>Data Structures, Computer Vision, Systems Programming, and Computer Architecture</em>.  
-        Together, these experiences gave me both the technical depth and problem-solving mindset to design scalable, secure, and intelligent systems that create real-world impact.
+        My academic journey has been shaped by curiosity, resilience, and a passion for technology.
+        I’ve focused on Computer Engineering across ML/AI and systems, with a strong foundation in
+        networking, security, and software engineering fundamentals.
       </p>
 
+      {/* Divider */}
       <div className="border-t border-zinc-800 mt-8 pt-12" />
 
+      {/* Schools */}
       <section className="space-y-8">
         {schools.map((s) => (
           <article
             key={s.name}
-            className="grid grid-cols-1 md:grid-cols-[160px,1fr] gap-6"
+            className="grid grid-cols-1 md:grid-cols-[180px,1fr] gap-6"
           >
-            {/* Logo */}
+            {/* Logo (larger + responsive) */}
             <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/40 p-4 flex items-center justify-center">
-              <div className="relative w-28 h-28">
+              <div className="relative w-28 h-28 md:w-36 md:h-36">
                 <Image
                   src={s.logoSrc}
                   alt={`${s.name} logo`}
                   fill
                   className="object-contain"
-                  sizes="112px"
+                  sizes="(min-width: 768px) 144px, 112px"
                   priority
                 />
               </div>
             </div>
 
-            {/* Details */}
+            {/* Details card */}
             <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/40 p-6">
               <div className="flex flex-wrap items-baseline justify-between gap-3">
                 <h2 className="text-white text-xl font-semibold">{s.name}</h2>
                 <span className="text-sm text-zinc-400">{s.dates}</span>
               </div>
+
               <p className="text-zinc-300 mt-1">{s.degree}</p>
               <p className="text-zinc-400 text-sm mt-1">{s.location}</p>
 
