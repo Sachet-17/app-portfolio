@@ -74,8 +74,8 @@ export default function Home() {
       {/* Glow line */}
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
 
-      {/* Social icon row */}
-      <div className="mt-6 sm:mt-8 flex items-center justify-center gap-4 sm:gap-5">
+      {/* Social icon row with labels */}
+      <div className="mt-6 sm:mt-8 flex items-center justify-center gap-5 sm:gap-7">
         {socials.map(({ name, href, icon: Icon, external }) => (
           <Link
             key={name}
@@ -83,9 +83,14 @@ export default function Home() {
             aria-label={name}
             target={external ? "_blank" : undefined}
             rel={external ? "noopener noreferrer" : undefined}
-            className="group inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900/40 text-zinc-300 hover:text-white hover:bg-zinc-900 hover:border-zinc-300 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500"
+            className="group flex flex-col items-center"
           >
-            <Icon className="h-5 w-5 sm:h-6 sm:w-6 transition-transform group-hover:scale-110" />
+            <span className="inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900/40 text-zinc-300 hover:text-white hover:bg-zinc-900 hover:border-zinc-300 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500">
+              <Icon className="h-5 w-5 sm:h-6 sm:w-6 transition-transform group-hover:scale-110" />
+            </span>
+            <span className="mt-2 text-[11px] sm:text-xs text-zinc-400 group-hover:text-zinc-200 transition-colors">
+              {name}
+            </span>
           </Link>
         ))}
       </div>
