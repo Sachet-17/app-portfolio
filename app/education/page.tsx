@@ -1,4 +1,5 @@
 // app/education/page.tsx
+import Image from "next/image";
 import { Inter } from "next/font/google";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
@@ -17,6 +18,7 @@ type School = {
   location: string;
   dates: string;
   coursework: string[];
+  logo: string; // ✅ new
 };
 
 const schools: School[] = [
@@ -25,14 +27,26 @@ const schools: School[] = [
     university: "New York University",
     location: "New York, NY",
     dates: "Sep 2023 – May 2025",
-    coursework: ["Machine Learning", "Artificial Intelligence", "Internet Protocols", "Network Security"],
+    coursework: [
+      "Machine Learning",
+      "Artificial Intelligence",
+      "Internet Protocols",
+      "Network Security",
+    ],
+    logo: "/nyu.png", // ✅ place logo in /public/nyu.png
   },
   {
     degree: "Bachelor of Science in Computer Engineering",
     university: "University of Illinois at Chicago",
     location: "Chicago, IL",
     dates: "Aug 2019 – May 2023",
-    coursework: ["Data Structures", "Computer Vision", "Systems Programming", "Computer Architecture"],
+    coursework: [
+      "Data Structures",
+      "Computer Vision",
+      "Systems Programming",
+      "Computer Architecture",
+    ],
+    logo: "/uic.png", // ✅ place logo in /public/uic.png
   },
 ];
 
@@ -50,7 +64,7 @@ export default function EducationPage() {
       {/* Divider */}
       <div className="border-t border-zinc-800 mt-8 pt-12" />
 
-      {/* Card grid (like contacts/experience) */}
+      {/* Card grid */}
       <section className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:gap-12">
         {schools.map((s) => (
           <Card key={s.university}>
@@ -60,9 +74,17 @@ export default function EducationPage() {
                 className="absolute w-px h-2/3 bg-gradient-to-b from-zinc-500 via-zinc-500/50 to-transparent"
                 aria-hidden="true"
               />
-              {/* circle icon */}
-              <span className="relative z-10 flex items-center justify-center w-12 h-12 text-sm duration-1000 border rounded-full text-zinc-200 group-hover:text-white group-hover:bg-zinc-900 border-zinc-500 bg-zinc-900 group-hover:border-zinc-200 drop-shadow-orange">
+
+              {/* Icon + logo together */}
+              <span className="relative z-10 flex items-center justify-center w-14 h-14 text-sm duration-1000 border rounded-full text-zinc-200 group-hover:text-white group-hover:bg-zinc-900 border-zinc-500 bg-zinc-900 group-hover:border-zinc-200 drop-shadow-orange gap-2">
                 <GraduationCap size={20} />
+                <Image
+                  src={s.logo}
+                  alt={`${s.university} logo`}
+                  width={20}
+                  height={20}
+                  className="rounded-sm"
+                />
               </span>
 
               {/* degree + uni */}
