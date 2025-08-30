@@ -35,14 +35,19 @@ export default function ContactPage() {
 
       {/* Two-column layout */}
       <section className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        {/* Left: Form embed */}
+        {/* Left: Form embed (dark wrapper) */}
         <Card>
-          <div className="p-0 overflow-hidden rounded-xl">
+          <div className="rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800">
+            {/* Optional top bar to blend with UI */}
+            <div className="h-10 bg-zinc-900/80 border-b border-zinc-800 px-4 flex items-center">
+              <span className="text-xs text-zinc-500">Google Form</span>
+            </div>
             <iframe
               src={GOOGLE_FORM_EMBED_URL}
               width="100%"
               height="720"
               style={{ border: 0 }}
+              className="block w-full"
               loading="lazy"
             />
           </div>
@@ -109,7 +114,7 @@ export default function ContactPage() {
             <div className="border-t border-zinc-800 my-4" />
 
             <p className="text-xs text-zinc-500">
-              Note: Google Forms uses its own styling inside the iframe. That’s normal and expected.
+              Note: The embedded form keeps Google’s internal styling. Use the palette icon in Google Forms to pick a darker theme for an even better match.
             </p>
           </div>
         </Card>
