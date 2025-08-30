@@ -9,7 +9,7 @@ const links = [
   { name: "Education", href: "/education" },
   { name: "Experience", href: "/experience" },
   { name: "Projects", href: "/projects" },
-  { name: "Resume", href: "/Sachet%20Ranjan%20Bisi%20Resume.pdf" }, // uncomment if you want it in the nav
+  { name: "Resume", href: "/resume" }, // uncomment if you want it in the nav
   { name: "Contact", href: "/contact" },
 ];
 

@@ -10,7 +10,7 @@ const navigation = [
   { name: "Education", href: "/education" },
   { name: "Experience", href: "/experience" },
   { name: "Projects", href: "/projects" },
-  { name: "Resume", href: "/Sachet%20Ranjan%20Bisi%20Resume.pdf" },
+  { name: "Resume", href: "/resume" },
   { name: "Contact", href: "/contact" },
 ];
 
