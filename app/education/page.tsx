@@ -33,7 +33,7 @@ const schools: School[] = [
       "Internet Protocols",
       "Network Security",
     ],
-    logo: "/nyu.png", // ✅ put file in /public/nyu.png
+    logo: "edu/nyu.png", // ✅ put file in /public/nyu.png
   },
   {
     degree: "Bachelor of Science in Computer Engineering",
@@ -46,7 +46,7 @@ const schools: School[] = [
       "Systems Programming",
       "Computer Architecture",
     ],
-    logo: "/uic.png", // ✅ put file in /public/uic.png
+    logo: "edu/uic.png", // ✅ put file in /public/uic.png
   },
 ];
 
