@@ -10,11 +10,11 @@ export const metadata: Metadata = {
     default: "Sachet Ranjan Bisi — Portfolio",
     template: "%s | Sachet Ranjan Bisi",
   },
-  description: "Software Developer & AI/ML Engineer",
+  description: "AI/ML Engineer & Software Developer",
   metadataBase: new URL("https://iamsrb.com"), // <- your live domain
   openGraph: {
     title: "Sachet Ranjan Bisi — Portfolio",
-    description: "Software Developer & AI/ML Engineer",
+    description: "AI/ML Engineer & Software Developer",
     url: "/", // resolved against metadataBase
     siteName: "Sachet Bisi",
     images: [{ url: "/og.png", width: 1200, height: 630 }],

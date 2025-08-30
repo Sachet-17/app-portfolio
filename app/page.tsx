@@ -98,7 +98,7 @@ export default function Home() {
       {/* Subtitle / CTA */}
       <div className="my-10 sm:my-12 text-center animate-fade-in px-4">
         <p className="mx-auto max-w-xl text-sm sm:text-base text-zinc-400">
-          Software Engineer • AI/ML • Backend — building reliable, scalable systems and clean UIs.
+         AI/ML Engineer • Software Engineer • AI/ML • Backend — building reliable, scalable systems and clean UIs.
         </p>
 
         {/*<div className="mt-5 flex flex-wrap items-center justify-center gap-3">
