@@ -1,126 +1,96 @@
-// app/education/page.tsx
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import { Navigation } from "../components/nav";
-import { Card } from "../components/card";
 import { GraduationCap, Calendar, MapPin } from "lucide-react";
-
-const inter = Inter({ subsets: ["latin"] });
+import Image from "next/image";
+import { Navigation } from "../components/nav";
 
 export const metadata = {
   title: "Education",
-  description: "Education — Sachet Ranjan Bisi",
+  description: "Education background of Sachet Bisi",
 };
-
-type School = {
-  degree: string;
-  university: string;
-  location: string;
-  dates: string;
-  coursework: string[];
-  logo: string;
-};
-
-const schools: School[] = [
-  {
-    degree: "Master of Science in Computer Engineering",
-    university: "New York University",
-    location: "New York, NY",
-    dates: "Sep 2023 – May 2025",
-    coursework: [
-      "Machine Learning",
-      "Artificial Intelligence",
-      "Internet Protocols",
-      "Network Security",
-    ],
-    logo: "edu/nyu.png", // ✅ put file in /public/nyu.png
-  },
-  {
-    degree: "Bachelor of Science in Computer Engineering",
-    university: "University of Illinois at Chicago",
-    location: "Chicago, IL",
-    dates: "Aug 2019 – May 2023",
-    coursework: [
-      "Data Structures",
-      "Computer Vision",
-      "Systems Programming",
-      "Computer Architecture",
-    ],
-    logo: "edu/uic.png", // ✅ put file in /public/uic.png
-  },
-];
 
 export default function EducationPage() {
   return (
-    <main className={`${inter.className} mx-auto max-w-6xl px-6 pt-32 pb-16`}>
+    <main className="mx-auto max-w-5xl px-6 pt-32 pb-16">
       <Navigation />
 
       {/* Heading */}
-      <h1 className="text-white text-5xl md:text-6xl font-bold mb-6">
-        Education
-      </h1>
-      <p className="text-zinc-400 max-w-3xl">
-        A blend of academic rigor and practical projects across computer
-        engineering, AI/ML, and systems design.
-      </p>
+      <header className="mb-12 text-left">
+        <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
+          Education
+        </h1>
+        <p className="mt-4 text-lg text-zinc-400 max-w-3xl">
+          A blend of academic rigor and practical projects across computer
+          engineering, AI/ML, and systems design.
+        </p>
+      </header>
 
-      {/* Divider */}
-      <div className="border-t border-zinc-800 mt-8 pt-12" />
+      <hr className="border-zinc-800 mb-12" />
 
-      {/* Card grid */}
-      <section className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:gap-12">
-        {schools.map((s) => (
-          <Card key={s.university}>
-            <div className="p-4 relative flex flex-col gap-4 duration-700 group md:gap-6 md:py-8 md:px-8">
-              {/* vertical glow line */}
-              <span
-                className="absolute w-px h-2/3 bg-gradient-to-b from-zinc-500 via-zinc-500/50 to-transparent"
-                aria-hidden="true"
-              />
-
-              {/* icon + logo side by side */}
-              <div className="flex items-center gap-3">
-                <span className="relative z-10 flex items-center justify-center w-14 h-14 text-sm duration-1000 border rounded-full text-zinc-200 group-hover:text-white group-hover:bg-zinc-900 border-zinc-500 bg-zinc-900 group-hover:border-zinc-200 drop-shadow-orange">
-                  <GraduationCap size={20} />
-                </span>
-                <Image
-                  src={s.logo}
-                  alt={`${s.university} logo`}
-                  width={40}
-                  height={40}
-                  className="rounded-md"
-                />
-              </div>
-
-              {/* degree + uni */}
-              <div className="z-10 mt-2">
-                <h2 className="text-xl font-medium text-zinc-200 group-hover:text-white duration-150">
-                  {s.degree}
-                </h2>
-                <p className="mt-1 text-zinc-400">{s.university}</p>
-
-                <div className="mt-2 flex flex-wrap items-center gap-4 text-sm text-zinc-500">
-                  <span className="inline-flex items-center gap-1">
-                    <Calendar className="w-4 h-4" />
-                    {s.dates}
-                  </span>
-                  <span className="inline-flex items-center gap-1">
-                    <MapPin className="w-4 h-4" />
-                    {s.location}
-                  </span>
-                </div>
-              </div>
-
-              {/* coursework */}
-              <ul className="z-10 mt-2 list-disc pl-5 space-y-1 text-zinc-300 text-sm">
-                {s.coursework.map((c, i) => (
-                  <li key={i}>{c}</li>
-                ))}
-              </ul>
+      {/* Education Cards */}
+      <div className="grid gap-8 md:grid-cols-2">
+        {/* NYU */}
+        <div className="rounded-xl border border-zinc-800 p-6 bg-zinc-900/40 hover:bg-zinc-900/60 transition">
+          <div className="flex items-center gap-3 mb-4">
+            <GraduationCap className="w-6 h-6 text-zinc-400" />
+            <Image
+              src="/logos/nyu.png"
+              alt="NYU Logo"
+              width={48}
+              height={48}
+              className="object-contain"
+            />
+          </div>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Master of Science in Computer Engineering
+          </h2>
+          <p className="text-zinc-400">New York University</p>
+          <div className="flex items-center gap-4 text-sm text-zinc-500 mt-2">
+            <div className="flex items-center gap-1">
+              <Calendar className="w-4 h-4" /> Sep 2023 – May 2025
             </div>
-          </Card>
-        ))}
-      </section>
+            <div className="flex items-center gap-1">
+              <MapPin className="w-4 h-4" /> New York, NY
+            </div>
+          </div>
+          <ul className="mt-4 list-disc list-inside text-zinc-300 space-y-1">
+            <li>Machine Learning</li>
+            <li>Artificial Intelligence</li>
+            <li>Internet Protocols</li>
+            <li>Network Security</li>
+          </ul>
+        </div>
+
+        {/* UIC */}
+        <div className="rounded-xl border border-zinc-800 p-6 bg-zinc-900/40 hover:bg-zinc-900/60 transition">
+          <div className="flex items-center gap-3 mb-4">
+            <GraduationCap className="w-6 h-6 text-zinc-400" />
+            <Image
+              src="/logos/uic.png"
+              alt="UIC Logo"
+              width={48}
+              height={48}
+              className="object-contain"
+            />
+          </div>
+          <h2 className="text-xl font-semibold text-zinc-100">
+            Bachelor of Science in Computer Engineering
+          </h2>
+          <p className="text-zinc-400">University of Illinois at Chicago</p>
+          <div className="flex items-center gap-4 text-sm text-zinc-500 mt-2">
+            <div className="flex items-center gap-1">
+              <Calendar className="w-4 h-4" /> Aug 2019 – May 2023
+            </div>
+            <div className="flex items-center gap-1">
+              <MapPin className="w-4 h-4" /> Chicago, IL
+            </div>
+          </div>
+          <ul className="mt-4 list-disc list-inside text-zinc-300 space-y-1">
+            <li>Data Structures</li>
+            <li>Computer Vision</li>
+            <li>Systems Programming</li>
+            <li>Computer Architecture</li>
+          </ul>
+        </div>
+      </div>
     </main>
   );
 }
