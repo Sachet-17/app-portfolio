@@ -4,6 +4,8 @@ import { Inter } from "@next/font/google";
 import LocalFont from "@next/font/local";
 import type { Metadata } from "next";
 import { Analytics } from "./components/analytics";
+import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: {
@@ -11,11 +13,11 @@ export const metadata: Metadata = {
     template: "%s | Sachet Ranjan Bisi",
   },
   description: "AI/ML Engineer & Software Developer",
-  metadataBase: new URL("https://iamsrb.com"), // <- your live domain
+  metadataBase: new URL("https://iamsrb.com"),
   openGraph: {
     title: "Sachet Ranjan Bisi — Portfolio",
     description: "AI/ML Engineer & Software Developer",
-    url: "/", // resolved against metadataBase
+    url: "/",
     siteName: "Sachet Bisi",
     images: [{ url: "/og.png", width: 1200, height: 630 }],
     locale: "en-US",
@@ -69,6 +71,23 @@ export default function RootLayout({
           process.env.NODE_ENV === "development" ? "debug-screens" : ""
         }`}
       >
+        {/* SRB brand badge (top-left, clickable) */}
+        <Link
+          href="/"
+          aria-label="Go to home"
+          className="fixed left-4 top-4 z-[60] md:left-6 md:top-6"
+        >
+          <div className="relative w-9 h-9 rounded-full overflow-hidden border border-zinc-700 bg-zinc-900/60 backdrop-blur transition hover:border-zinc-300">
+            <Image
+              src="/srb-base.png"   // ensure this is in /public
+              alt="SRB logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+        </Link>
+
         {children}
       </body>
     </html>
