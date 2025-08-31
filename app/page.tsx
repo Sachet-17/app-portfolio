@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Particles from "./components/particles";
 import { Github, Linkedin, Mail, Instagram } from "lucide-react";
+import Image from "next/image";
 
 
 const navigation = [
