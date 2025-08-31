@@ -66,6 +66,19 @@ export default function Home() {
       {/* Glow line */}
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
 
+      {/* Logo circle */}
+      <div className="mt-8 sm:mt-10 flex items-center justify-center">
+        <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border border-zinc-700 bg-zinc-900/50">
+          <Image
+            src="/srb-base.png" // put the logo in /public/srb-base.png
+            alt="SRB Logo"
+            fill
+            className="object-contain p-2"
+            priority
+          />
+        </div>
+      </div>
+
       {/* Hero title */}
       <h1 className="z-10 mt-6 sm:mt-8 px-2 text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tight text-transparent bg-clip-text bg-white/90 text-edge-outline animate-title whitespace-nowrap">
         Sachet Ranjan Bisi
