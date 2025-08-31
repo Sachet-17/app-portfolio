@@ -2,8 +2,7 @@
 import Link from "next/link";
 import Particles from "./components/particles";
 import { Github, Linkedin, Mail, Instagram } from "lucide-react";
-import Image from "next/image";
-
+// import Image from "next/image";
 
 const navigation = [
   { name: "About", href: "/about" },
@@ -37,7 +36,7 @@ const socials = [
   },
   {
     name: "Instagram",
-    href: "https://www.instagram.com/sachet_17/", // <- update
+    href: "https://www.instagram.com/sachet_17/",
     icon: Instagram,
     external: true,
   },
@@ -46,17 +45,17 @@ const socials = [
 export default function Home() {
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
-      {/* Background particles (non-blocking) */}
+      {/* Background particles */}
       <Particles className="absolute inset-0 -z-10" quantity={80} />
 
-      {/* Top nav (simple quick links for home) */}
+      {/* Top nav */}
       <nav className="mt-16 sm:mt-20 animate-fade-in">
-        <ul className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+        <ul className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
           {navigation.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-xs sm:text-sm text-zinc-400 hover:text-zinc-200 transition-colors"
+              className="text-base sm:text-lg text-zinc-400 hover:text-zinc-200 transition-colors"
             >
               {item.name}
             </Link>
@@ -67,19 +66,6 @@ export default function Home() {
       {/* Glow line */}
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
 
-      {/* Logo circle 
-      <div className="mt-8 sm:mt-10 flex items-center justify-center">
-        <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border border-zinc-700 bg-zinc-900/50">
-          <Image
-            src="/srb-base.png" // put the logo in /public/srb-base.png
-            alt="SRB Logo"
-            fill
-            className="object-contain p-2"
-            priority
-          />
-        </div>
-      </div> */}
-
       {/* Hero title */}
       <h1 className="z-10 mt-6 sm:mt-8 px-2 text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tight text-transparent bg-clip-text bg-white/90 text-edge-outline animate-title whitespace-nowrap">
         Sachet Ranjan Bisi
@@ -88,7 +74,7 @@ export default function Home() {
       {/* Glow line */}
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
 
-      {/* Social icon row with labels */}
+      {/* Social icons */}
       <div className="mt-6 sm:mt-8 flex items-center justify-center gap-5 sm:gap-7">
         {socials.map(({ name, href, icon: Icon, external }) => (
           <Link
@@ -109,26 +95,11 @@ export default function Home() {
         ))}
       </div>
       
-      {/* Subtitle / CTA */}
+      {/* Subtitle */}
       <div className="my-10 sm:my-12 text-center animate-fade-in px-4">
         <p className="mx-auto max-w-xl text-sm sm:text-base text-zinc-400">
-         AI/ML Engineer • Software Engineer • AI/ML • Backend — building reliable, scalable systems and clean UIs.
+          AI/ML Engineer • Software Engineer • AI/ML • Backend — building reliable, scalable systems and clean UIs.
         </p>
-
-        {/*<div className="mt-5 flex flex-wrap items-center justify-center gap-3">
-          <Link
-            href="/projects"
-            className="rounded-md border border-zinc-700 px-4 py-2 text-sm text-zinc-100 hover:bg-zinc-900"
-          >
-            View Projects
-          </Link>
-          <Link
-            href="/contact"
-            className="rounded-md border border-zinc-700 px-4 py-2 text-sm text-zinc-100 hover:bg-zinc-900"
-          >
-            Contact
-          </Link>
-        </div> */}
       </div>
     </div>
   );
