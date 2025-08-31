@@ -77,14 +77,17 @@ export default function RootLayout({
           aria-label="Go to home"
           className="fixed left-4 top-4 z-[60] md:left-6 md:6"
         >
-          <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border border-zinc-700 bg-zinc-900/60 backdrop-blur transition hover:border-zinc-300">
-            <Image
-              src="/srb-base.png"   // ensure this file exists in /public
-              alt="SRB logo"
-              fill
-              className="object-contain p-2"
-              priority
-            />
+          {/* Floating SRB logo */}
+          <div className="fixed top-6 left-6 z-50">
+            <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-zinc-700 bg-zinc-900/50">
+              <Image
+                src="/srb-base.png"
+                alt="SRB Logo"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
           </div>
         </Link>
 
