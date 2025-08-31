@@ -79,7 +79,7 @@ export default function RootLayout({
         >
           {/* Floating SRB logo */}
           <div className="fixed top-6 left-6 z-50">
-            <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-zinc-700 bg-zinc-900/50">
+            <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-zinc-700 bg-zinc-900/50">
               <Image
                 src="/srb-base.png"
                 alt="SRB Logo"
