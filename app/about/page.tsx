@@ -30,7 +30,7 @@ export default function AboutPage() {
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Photo tile */}
         <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/40 p-3 flex items-center justify-center">
-          <div className="about-photo relative w-full aspect-square max-h-[360px] sm:max-h-[420px] md:max-h-[480px]">
+          <div className="relative w-full max-w-[280px] aspect-[3/4] sm:aspect-square">
             <Image
               src="/headshots.jpg"
               alt="Sachet Ranjan Bisi"
