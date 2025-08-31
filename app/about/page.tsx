@@ -29,15 +29,17 @@ export default function AboutPage() {
       {/* Tile grid */}
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        {/* Photo tile */}
+       {/* Photo tile (no cropping, respects original aspect ratio) */}
         <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/40 p-3 flex items-center justify-center">
-          <div className="relative w-full max-w-[280px] md:max-w-[360px] aspect-[3/4] sm:aspect-square">
+          <div className="w-full max-w-[280px] md:max-w-[380px]">
             <Image
               src="/headshots.jpg"
               alt="Sachet Ranjan Bisi"
-              fill
-              className="object-cover object-top rounded-lg"
+              width={900}          // any portrait dimensions matching your photo
+              height={1125}        // keeps the ratio; Next.js will size down responsively
+              className="w-full h-auto rounded-lg"
               priority
+              sizes="(max-width: 768px) 280px, 380px"
             />
           </div>
         </div>
