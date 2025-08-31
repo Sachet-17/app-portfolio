@@ -1,6 +1,9 @@
+// app/components/nav.tsx
 "use client";
+
 import { ArrowLeft, Menu, X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 const links = [
@@ -9,7 +12,7 @@ const links = [
   { name: "Education", href: "/education" },
   { name: "Experience", href: "/experience" },
   { name: "Projects", href: "/projects" },
-  { name: "Resume", href: "/resume" }, // uncomment if you want it in the nav
+  { name: "Resume", href: "/resume" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -17,17 +20,18 @@ export const Navigation: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
   const [isIntersecting, setIntersecting] = useState(true);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!ref.current) return;
     const observer = new IntersectionObserver(([entry]) =>
-      setIntersecting(entry.isIntersecting),
+      setIntersecting(entry.isIntersecting)
     );
     observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
-  // Close menu when route changes (optional if you use next/navigation)
+  // Close mobile sheet on ESC
   useEffect(() => {
     const onEsc = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
     window.addEventListener("keydown", onEsc);
@@ -55,15 +59,24 @@ export const Navigation: React.FC = () => {
 
           {/* Desktop links */}
           <nav className="hidden sm:flex items-center gap-6">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-zinc-400 hover:text-zinc-100 text-sm md:text-base transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
+            {links.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={[
+                    "relative text-sm md:text-base transition-colors pb-1 md:pb-2",
+                    isActive
+                      ? "text-white font-semibold after:content-[''] after:absolute after:left-0 after:right-0 after:-bottom-1 md:after:-bottom-1.5 after:h-[2px] after:bg-gradient-to-r after:from-zinc-200 after:via-zinc-400/80 after:to-zinc-200 after:rounded-full"
+                      : "text-zinc-400 hover:text-zinc-100",
+                  ].join(" ")}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Mobile menu button */}
@@ -84,16 +97,24 @@ export const Navigation: React.FC = () => {
           }`}
         >
           <nav className="container mx-auto grid gap-2 px-4 pb-4 md:px-6">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="block rounded-md px-3 py-2 text-zinc-200 hover:bg-zinc-800/60"
-              >
-                {link.name}
-              </Link>
-            ))}
+            {links.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`block rounded-md px-3 py-2 transition-colors ${
+                    isActive
+                      ? "text-white font-semibold bg-zinc-800/60"
+                      : "text-zinc-200 hover:bg-zinc-800/60"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </nav>
         </div>
       </div>
