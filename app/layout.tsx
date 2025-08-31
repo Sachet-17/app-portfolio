@@ -9,13 +9,13 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: {
-    default: "Sachet Ranjan Bisi — Portfolio",
+    default: "Sachet Bisi — Portfolio",
     template: "%s | Sachet Ranjan Bisi",
   },
   description: "AI/ML Engineer & Software Developer",
   metadataBase: new URL("https://iamsrb.com"),
   openGraph: {
-    title: "Sachet Ranjan Bisi — Portfolio",
+    title: "Sachet Bisi — Portfolio",
     description: "AI/ML Engineer & Software Developer",
     url: "/",
     siteName: "Sachet Bisi",
@@ -71,18 +71,18 @@ export default function RootLayout({
           process.env.NODE_ENV === "development" ? "debug-screens" : ""
         }`}
       >
-        {/* SRB brand badge (top-left, clickable) */}
+        {/* SRB brand badge (top-left, clickable, larger size) */}
         <Link
           href="/"
           aria-label="Go to home"
-          className="fixed left-4 top-4 z-[60] md:left-6 md:top-6"
+          className="fixed left-4 top-4 z-[60] md:left-6 md:6"
         >
-          <div className="relative w-9 h-9 rounded-full overflow-hidden border border-zinc-700 bg-zinc-900/60 backdrop-blur transition hover:border-zinc-300">
+          <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border border-zinc-700 bg-zinc-900/60 backdrop-blur transition hover:border-zinc-300">
             <Image
-              src="/srb-base.png"   // ensure this is in /public
+              src="/srb-base.png"   // ensure this file exists in /public
               alt="SRB logo"
               fill
-              className="object-contain"
+              className="object-contain p-2"
               priority
             />
           </div>
