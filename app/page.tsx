@@ -1,6 +1,7 @@
 // app/page.tsx
 import Link from "next/link";
 import Particles from "./components/particles";
+import Spotlight from "./components/spotlight";  //added now
 import { Github, Linkedin, Mail, Instagram } from "lucide-react";
 // import Image from "next/image";
 
@@ -46,6 +47,7 @@ export default function Home() {
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
       {/* Background particles */}
+      <Spotlight /> {/* added now*/}
       <Particles className="absolute inset-0 -z-10" quantity={80} />
 
       {/* Top nav */}
