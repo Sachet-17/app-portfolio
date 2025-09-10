@@ -33,7 +33,7 @@ export default function AboutPage() {
         <div className="rounded-xl border border-zinc-800/80 bg-zinc-900/40 p-3 flex items-center justify-center">
           <div className="w-full max-w-[280px] md:max-w-[380px]">
             <Image
-              src="/Headshots.jpg"
+              src="/headshot.png"
               alt="Sachet Ranjan Bisi"
               width={900}          // any portrait dimensions matching your photo
               height={1125}        // keeps the ratio; Next.js will size down responsively
