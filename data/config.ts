@@ -61,5 +61,7 @@ export const siteConfig = {
   github: "https://github.com/Sachet-17",
   linkedin: "https://www.linkedin.com/in/sachetbisi/",
   instagram: "https://www.instagram.com/sachet_17/",
+  googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeCGdSeKWTvZSLkY5_tF7LdsaUbHMVTqrNXra-m1b8B1vKsbg/viewform?usp=dialog",
+  resumePdfPath: "/Sachet%20Ranjan%20Bisi%20Resume.pdf",
 } as const;
 

@@ -1,37 +1,25 @@
-// app/contact/page.tsx
+"use client";
+
 import { Inter } from "next/font/google";
-import { Navigation } from "../components/nav";
-import { Card } from "../components/card";
 import Link from "next/link";
-import { siteConfig } from "../../data/config";
+import { Card } from "../card";
+import { siteConfig } from "../../../data/config";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Contact",
-  description: "Contact — Sachet Ranjan Bisi",
-};
-
-export default function ContactPage() {
+export function ContactSection() {
   return (
-    <main className={`${inter.className} mx-auto w-full max-w-5xl px-6 pt-32 pb-16`}>
-      <Navigation />
-
-      {/* Heading */}
+    <section id="contact" className={`${inter.className} mx-auto w-full max-w-5xl px-6 py-32`}>
       <h1 className="text-white text-5xl md:text-6xl font-bold mb-6">Contact</h1>
       <p className="text-zinc-400 max-w-3xl">
         Prefer a quick form? Fill it out below — I'll get an email when you submit.
       </p>
 
-      {/* Divider */}
       <div className="border-t border-zinc-800 mt-8 pt-12" />
 
-      {/* Two-column layout */}
-      <section className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        {/* Left: Form embed (dark wrapper) */}
+      <section className="grid grid-cols-1 gap-8 md:grid-cols-2 mt-8">
         <Card>
           <div className="rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800">
-            {/* Optional top bar to blend with UI */}
             <div className="h-10 bg-zinc-900/80 border-b border-zinc-800 px-4 flex items-center">
               <span className="text-xs text-zinc-500">Google Form</span>
             </div>
@@ -46,7 +34,6 @@ export default function ContactPage() {
           </div>
         </Card>
 
-        {/* Right: Extra info */}
         <Card>
           <div className="p-5 md:p-8 space-y-4">
             <h2 className="text-lg font-medium">What happens next?</h2>
@@ -112,6 +99,7 @@ export default function ContactPage() {
           </div>
         </Card>
       </section>
-    </main>
+    </section>
   );
 }
+

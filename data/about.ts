@@ -1,3 +1,5 @@
+import { siteConfig } from "./config";
+
 export interface AboutData {
   bio: {
     paragraphs: string[];
@@ -28,7 +30,7 @@ export const aboutData: AboutData = {
   resume: {
     title: "Résumé",
     description: "PDF download with experience, projects, and skills.",
-    downloadUrl: "/Sachet%20Ranjan%20Bisi%20Resume.pdf",
+    downloadUrl: siteConfig.resumePdfPath,
   },
   location: {
     city: "New York",

@@ -4,13 +4,9 @@
 import { Menu, X } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 import { navigation } from "../../data/config";
+import { getHashFromHref, scrollToSection } from "../../util/scroll";
 
 const links = navigation;
-
-// Convert navigation hrefs to hash links (e.g., "/about" -> "#about")
-const getHashFromHref = (href: string) => {
-  return href.startsWith("/") ? `#${href.slice(1)}` : href;
-};
 
 export const Navigation: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
@@ -84,18 +80,7 @@ export const Navigation: React.FC = () => {
   // Handle smooth scroll on hash link click
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
     e.preventDefault();
-    const targetId = hash.slice(1); // Remove #
-    const element = document.getElementById(targetId);
-    if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
+    scrollToSection(hash);
     setOpen(false);
   };
 

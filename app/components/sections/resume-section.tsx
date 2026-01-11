@@ -1,33 +1,23 @@
-// app/resume/page.tsx
+"use client";
+
 import { Inter } from "next/font/google";
-import { Navigation } from "../components/nav";
 import Link from "next/link";
-import { siteConfig } from "../../data/config";
+import { siteConfig } from "../../../data/config";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Resume",
-  description: "Resume — Sachet Ranjan Bisi",
-};
-
-export default function ResumePage() {
+export function ResumeSection() {
   const pdfPath = siteConfig.resumePdfPath;
 
   return (
-    <main className={`${inter.className} mx-auto max-w-6xl px-6 pt-32 pb-16`}>
-      <Navigation />
-
-      {/* Heading */}
+    <section id="resume" className={`${inter.className} mx-auto max-w-6xl px-6 py-32`}>
       <h1 className="text-white text-5xl md:text-6xl font-bold mb-6">Resume</h1>
       <p className="text-zinc-400 mb-6">
         View my résumé below. You can also download it for later.
       </p>
       
-      {/* Divider */}
       <div className="border-t border-zinc-800 mb-12" />
       
-      {/* Actions */}
       <div className="mb-8 flex flex-wrap gap-3">
         <Link
           href={pdfPath}
@@ -46,7 +36,6 @@ export default function ResumePage() {
         </a>
       </div>
 
-      {/* PDF embed */}
       <div className="w-full h-[80vh] border border-zinc-800 rounded-lg overflow-hidden bg-zinc-900">
         <iframe
           src={pdfPath}
@@ -55,10 +44,10 @@ export default function ResumePage() {
         />
       </div>
 
-      {/* Fallback note */}
       <p className="mt-3 text-xs text-zinc-500">
-        If the PDF doesn’t render, use “Open in new tab” or “Download PDF”.
+        If the PDF doesn't render, use "Open in new tab" or "Download PDF".
       </p>
-    </main>
+    </section>
   );
 }
+
