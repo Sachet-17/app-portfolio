@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import Link from "next/link";
+import { Reveal, SlideUp } from "../components/animations";
+import { ContactForm } from "../components/contact-form";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,41 +13,29 @@ export const metadata = {
   description: "Contact — Sachet Ranjan Bisi",
 };
 
-// 🔗 Replace with your Google Form EMBED URL
-const GOOGLE_FORM_EMBED_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSeCGdSeKWTvZSLkY5_tF7LdsaUbHMVTqrNXra-m1b8B1vKsbg/viewform?usp=dialog";
-
 export default function ContactPage() {
   return (
     <main className={`${inter.className} mx-auto w-full max-w-5xl px-6 pt-32 pb-16`}>
       <Navigation />
 
       {/* Heading */}
-      <h1 className="text-white text-5xl md:text-6xl font-bold mb-6">Contact</h1>
-      <p className="text-zinc-400 max-w-3xl">
-        Prefer a quick form? Fill it out below — I’ll get an email when you submit.
-      </p>
+      <SlideUp>
+        <h1 className="text-white text-5xl md:text-6xl font-bold mb-6">Contact</h1>
+        <p className="text-zinc-400 max-w-3xl">
+          Have a question or want to work together? Fill out the form below and I'll get back to you soon.
+        </p>
+      </SlideUp>
 
       {/* Divider */}
       <div className="border-t border-zinc-800 mt-8 pt-12" />
 
       {/* Two-column layout */}
-      <section className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        {/* Left: Form embed (dark wrapper) */}
+      <Reveal delay={0.1}>
+        <section className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        {/* Left: Contact Form */}
         <Card>
-          <div className="rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800">
-            {/* Optional top bar to blend with UI */}
-            <div className="h-10 bg-zinc-900/80 border-b border-zinc-800 px-4 flex items-center">
-              <span className="text-xs text-zinc-500">Google Form</span>
-            </div>
-            <iframe
-              src={GOOGLE_FORM_EMBED_URL}
-              width="100%"
-              height="720"
-              style={{ border: 0 }}
-              className="block w-full"
-              loading="lazy"
-            />
+          <div className="p-5 md:p-8">
+            <ContactForm />
           </div>
         </Card>
 
@@ -107,14 +97,10 @@ export default function ContactPage() {
               </li>
             </ul>
 
-            <div className="border-t border-zinc-800 my-4" />
-
-            <p className="text-xs text-zinc-500">
-              Note: The embedded form keeps Google’s internal styling.
-            </p>
           </div>
         </Card>
-      </section>
+        </section>
+      </Reveal>
     </main>
   );
 }

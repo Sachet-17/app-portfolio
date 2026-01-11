@@ -110,3 +110,32 @@ export function PageTransition({ children }: PageTransitionProps) {
   );
 }
 
+interface RevealProps {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+  distance?: number;
+}
+
+/**
+ * Reusable Reveal component that animates elements when they enter the viewport.
+ * Uses whileInView for a gentle fade and slide effect.
+ */
+export function Reveal({ children, className, delay = 0, distance = 20 }: RevealProps) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: distance }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{
+        duration: 0.5,
+        delay,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+

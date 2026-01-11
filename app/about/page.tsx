@@ -6,7 +6,7 @@ import { Navigation } from "../components/nav";
 import { MapPin, Github, Linkedin, Mail, FileText, Instagram } from "lucide-react";
 import { aboutData } from "../../data/about";
 import { siteConfig } from "../../data/config";
-import { SlideUp, StaggerContainer, StaggerItem } from "../components/animations";
+import { SlideUp, StaggerContainer, StaggerItem, Reveal } from "../components/animations";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,7 +32,8 @@ export default function AboutPage() {
       <div className="border-t border-zinc-800 mt-8 pt-12" />
 
       {/* Tile grid */}
-      <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <Reveal delay={0.1}>
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
        {/* Photo tile (no cropping, respects original aspect ratio) */}
         <StaggerItem>
@@ -164,7 +165,8 @@ export default function AboutPage() {
           </ul>
           </div>
         </StaggerItem>
-      </StaggerContainer>
+        </StaggerContainer>
+      </Reveal>
     </main>
   );
 }

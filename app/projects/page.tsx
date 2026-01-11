@@ -2,7 +2,7 @@
 import { Inter } from "next/font/google";
 import { Navigation } from "../components/nav";
 import { siteConfig } from "../../data/config";
-import { SlideUp } from "../components/animations";
+import { SlideUp, Reveal } from "../components/animations";
 import { ProjectsContent } from "./projects-content";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -31,7 +31,9 @@ export default function ProjectsPage() {
       {/* Divider */}
       <div className="border-t border-zinc-800 mt-8 pt-12" />
 
-      <ProjectsContent />
+      <Reveal delay={0.1}>
+        <ProjectsContent />
+      </Reveal>
     </main>
   );
 }

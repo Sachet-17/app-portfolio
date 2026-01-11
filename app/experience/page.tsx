@@ -5,7 +5,7 @@ import { Card } from "../components/card";
 import { Briefcase, MapPin, Calendar } from "lucide-react";
 import { roles } from "../../data/experience";
 import { siteConfig } from "../../data/config";
-import { SlideUp, StaggerContainer, StaggerItem } from "../components/animations";
+import { SlideUp, StaggerContainer, StaggerItem, Reveal } from "../components/animations";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,7 +32,8 @@ export default function ExperiencePage() {
       <div className="border-t border-zinc-800 mt-8 pt-12" />
 
       {/* Contacts-style card grid */}
-      <StaggerContainer className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:gap-12">
+      <Reveal delay={0.1}>
+        <StaggerContainer className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:gap-12">
         {roles.map((r) => (
           <StaggerItem key={r.id}>
             <Card>
@@ -74,7 +75,8 @@ export default function ExperiencePage() {
             </Card>
           </StaggerItem>
         ))}
-      </StaggerContainer>
+        </StaggerContainer>
+      </Reveal>
     </main>
   );
 }
