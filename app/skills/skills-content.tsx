@@ -35,21 +35,8 @@ export function SkillsContent() {
   const [selectedCategory, setSelectedCategory] = useState<SkillCategory | "all">("all");
 
   const filteredSkills = useMemo(() => {
-    let filtered = selectedCategory === "all" ? skills : skills.filter((skill) => skill.category === selectedCategory);
-    
-    // Deduplicate by name (case-insensitive) while preserving order
-    const seen = new Set<string>();
-    const unique: typeof skills = [];
-    
-    for (const skill of filtered) {
-      const key = skill.name.toLowerCase();
-      if (!seen.has(key)) {
-        seen.add(key);
-        unique.push(skill);
-      }
-    }
-    
-    return unique;
+    if (selectedCategory === "all") return skills;
+    return skills.filter((skill) => skill.category === selectedCategory);
   }, [selectedCategory]);
 
   const categories: (SkillCategory | "all")[] = ["all", ...Object.keys(skillCategories) as SkillCategory[]];

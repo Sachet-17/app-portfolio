@@ -60,25 +60,13 @@ export const Navigation: React.FC = () => {
                   href={link.href}
                   aria-current={isActive ? "page" : undefined}
                   className={[
-                    "relative text-sm md:text-base transition-all duration-300 pb-1 md:pb-2 group",
+                    "relative text-sm md:text-base transition-colors pb-1 md:pb-2",
                     isActive
-                      ? "text-white font-semibold"
+                      ? "text-white font-semibold after:content-[''] after:absolute after:left-0 after:right-0 after:-bottom-1 md:after:-bottom-1.5 after:h-[2px] after:bg-gradient-to-r after:from-zinc-200 after:via-zinc-400/80 after:to-zinc-200 after:rounded-full"
                       : "text-zinc-400 hover:text-zinc-100",
                   ].join(" ")}
                 >
-                  <span className="relative z-10">{link.name}</span>
-                  {/* Active state underline */}
-                  {isActive && (
-                    <span className="absolute left-0 right-0 -bottom-1 md:-bottom-1.5 h-[2px] bg-gradient-to-r from-zinc-200 via-zinc-400/80 to-zinc-200 rounded-full" />
-                  )}
-                  {/* Hover underline effect */}
-                  {!isActive && (
-                    <span className="absolute inset-x-0 -bottom-1 md:-bottom-1.5 h-[2px] bg-gradient-to-r from-transparent via-zinc-400/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-full" />
-                  )}
-                  {/* Soft background pill on hover (subtle) */}
-                  {!isActive && (
-                    <span className="absolute inset-x-0 inset-y-0 -mx-2 rounded-md bg-zinc-800/30 opacity-0 group-hover:opacity-100 transition-opacity duration-200 -z-0" />
-                  )}
+                  {link.name}
                 </Link>
               );
             })}
@@ -110,10 +98,10 @@ export const Navigation: React.FC = () => {
                   href={link.href}
                   onClick={() => setOpen(false)}
                   aria-current={isActive ? "page" : undefined}
-                  className={`block rounded-md px-3 py-2 transition-all duration-200 relative ${
+                  className={`block rounded-md px-3 py-2 transition-colors ${
                     isActive
-                      ? "text-white font-semibold bg-zinc-800/60 border-l-2 border-zinc-400"
-                      : "text-zinc-200 hover:bg-zinc-800/40 hover:pl-4"
+                      ? "text-white font-semibold bg-zinc-800/60"
+                      : "text-zinc-200 hover:bg-zinc-800/60"
                   }`}
                 >
                   {link.name}

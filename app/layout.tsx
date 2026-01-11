@@ -4,7 +4,6 @@ import { Inter } from "@next/font/google";
 import LocalFont from "@next/font/local";
 import type { Metadata } from "next";
 import { Analytics } from "./components/analytics";
-import { PageTransition } from "./components/page-transition";
 
 export const metadata: Metadata = {
   title: {
@@ -70,7 +69,7 @@ export default function RootLayout({
           process.env.NODE_ENV === "development" ? "debug-screens" : ""
         }`}
       >
-        <PageTransition>{children}</PageTransition>
+        {children}
       </body>
     </html>
   );

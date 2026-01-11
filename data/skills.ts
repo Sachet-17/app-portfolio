@@ -76,6 +76,7 @@ export const skills: Skill[] = [
   { name: "Spring Boot", icon: SiSpringboot, iconColor: "text-green-600", category: "frameworks" },
   { name: "React", icon: SiReact, iconColor: "text-cyan-400", category: "frameworks" },
   { name: "Django", icon: SiDjango, iconColor: "text-green-500", category: "frameworks" },
+  { name: "REST", category: "frameworks" },
   { name: "RESTful APIs", category: "frameworks" },
   
   // Cloud & DevOps
